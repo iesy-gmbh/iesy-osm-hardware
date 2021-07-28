@@ -15,5 +15,8 @@ See https://sget.org/standards/osm/ for newest release of specification.
 ### Document files:
 The following document files are provided in this repository.
 
-BallOut (xlsx-File)
+BallOut (*.xlsx)
 * List of all module contacts / pins that are provided and specification of voltages, pin-directions and important customer notes for carrier implementation
+
+Muxing-Files (*.mex)
+* Configuration of SOC pin muxing based on NXP Config Tool; only available for i.MX8M Mini OSM-SF
