@@ -36,3 +36,7 @@ Schematic-File (*.pdf)
 Assembly-File (*.pdf)
 * Assembly Printing for all components of the embedded design.
 
+
+### License:
+Except where otherwise noted, licensed under a [Creative Commons Plus (CC+) Dual License](https://wiki.creativecommons.org/wiki/CCPlus).
+
