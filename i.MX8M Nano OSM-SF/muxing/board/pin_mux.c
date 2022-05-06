@@ -6,16 +6,14 @@
 /*
  * TEXT BELOW IS USED AS SETTING FOR TOOLS *************************************
 !!GlobalInfo
-product: Pins v10.0
-processor: MIMX8MM6xxxKZ
-package_id: MIMX8MM6CVTKZ
+product: Pins v11.0
+processor: MIMX8MN4xxxIZ
+package_id: MIMX8MN4CVTIZ
 mcu_data: ksdk2_0
-processor_version: 10.0.1
-power_domains: {NVCC_CLK: '1.8', NVCC_DRAM: '1.1', NVCC_ECSPI: '1.8', NVCC_ENET: '1.8', NVCC_GPIO1: '1.8', NVCC_I2C: '1.8', NVCC_JTAG: '1.8', NVCC_NAND: '1.8', NVCC_SAI1: '1.8',
-  NVCC_SAI2: '1.8', NVCC_SAI3: '1.8', NVCC_SAI5: '1.8', NVCC_SD1: '1.8', NVCC_SD2: '1.8', NVCC_SNVS: '1.8', NVCC_SNVS_1P8: '1.8', NVCC_UART: '1.8', PVCC0_1P8: '1.8',
-  PVCC1_1P8: '1.8', PVCC2_1P8: '1.8', VDD_24M_XTAL_1P8: '1.8', VDD_ANA0_1P8: '1.8', VDD_ANA1_1P8: '1.8', VDD_ANA_0P8: '0.8', VDD_ARM: '0.9', VDD_ARM_PLL_0P8: '0.8',
-  VDD_ARM_PLL_1P8: '1.8', VDD_DRAM: '0.9', VDD_DRAM_PLL_0P8: '0.9', VDD_DRAM_PLL_1P8: '1.8', VDD_GPU: '0.9', VDD_MIPI_1P8: '1.8', VDD_PCI_1P8: '1.8', VDD_SNVS_0P8: '0.8',
-  VDD_SOC: '0.8', VDD_USB_1P8: '1.8', VDD_USB_3P3: '3.3', VDD_VPU: '0.9'}
+processor_version: 11.0.1
+power_domains: {NVCC_CLK: '1.8', NVCC_DRAM: '1.1', NVCC_ECSPI: '1.8', NVCC_ENET: '1.8', NVCC_GPIO1: '1.8', NVCC_I2C: '1.8', NVCC_JTAG: '1.8', NVCC_NAND: '1.8', NVCC_SAI2: '1.8',
+  NVCC_SAI3: '1.8', NVCC_SAI5: '1.8', NVCC_SD1: '1.8', NVCC_SD2: '1.8', NVCC_SNVS_1P8: '1.8', NVCC_UART: '1.8', VDD_ANA1_1P8: '1.8', VDD_MIPI_1P8: '1.8', VDD_USB_1P8: '1.8',
+  VDD_USB_3P3: '3.3'}
  * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
  */
 
@@ -74,7 +72,7 @@ BOARD_InitPins:
   - {pin_num: E27, peripheral: CJTAG, signal: jtag_tdi, pin_signal: JTAG_TDI}
   - {pin_num: E26, peripheral: CJTAG, signal: jtag_tdo, pin_signal: JTAG_TDO}
   - {pin_num: F27, peripheral: CJTAG, signal: jtag_tms, pin_signal: JTAG_TMS}
-  - {pin_num: C27, peripheral: CJTAG, signal: jtag_trst_b, pin_signal: JTAG_TRST_B}
+  - {pin_num: C27, peripheral: CJTAG, signal: jtag_trst_b, pin_signal: BOOT_MODE2}
   - {pin_num: E9, peripheral: I2C1, signal: i2c_scl, pin_signal: I2C1_SCL}
   - {pin_num: F9, peripheral: I2C1, signal: i2c_sda, pin_signal: I2C1_SDA}
   - {pin_num: D9, peripheral: I2C2, signal: i2c_sda, pin_signal: I2C2_SDA}
@@ -97,14 +95,14 @@ BOARD_InitPins:
   - {pin_num: AB27, peripheral: ENET1, signal: enet_mdio, pin_signal: ENET_MDIO}
   - {pin_num: A22, peripheral: USB1, signal: usb_dn, pin_signal: USB1_DN}
   - {pin_num: B22, peripheral: USB1, signal: usb_dp, pin_signal: USB1_DP}
-  - {pin_num: B23, peripheral: USB2, signal: usb_dp, pin_signal: USB2_DP}
-  - {pin_num: A23, peripheral: USB2, signal: usb_dn, pin_signal: USB2_DN}
-  - {pin_num: D23, peripheral: USB2, signal: usb_id, pin_signal: USB2_ID}
+  - {peripheral: USB2, signal: usb_dp, pin_signal: USB2_DP}
+  - {peripheral: USB2, signal: usb_dn, pin_signal: USB2_DN}
+  - {peripheral: USB2, signal: usb_id, pin_signal: USB2_ID}
   - {pin_num: AD9, peripheral: USB1, signal: usb_otg_oc, pin_signal: GPIO1_IO13}
   - {pin_num: AB10, peripheral: USB1, signal: usb_otg_pwr, pin_signal: GPIO1_IO12}
   - {pin_num: F22, peripheral: USB1, signal: usb_vbus, pin_signal: USB1_VBUS}
   - {pin_num: D22, peripheral: USB1, signal: usb_id, pin_signal: USB1_ID}
-  - {pin_num: F23, peripheral: USB2, signal: usb_vbus, pin_signal: USB2_VBUS}
+  - {peripheral: USB2, signal: usb_vbus, pin_signal: USB2_VBUS}
   - {pin_num: AC9, peripheral: USB2, signal: usb_otg_pwr, pin_signal: GPIO1_IO14}
   - {pin_num: AB9, peripheral: USB2, signal: usb_otg_oc, pin_signal: GPIO1_IO15}
   - {pin_num: A7, peripheral: ECSPI1, signal: ecspi_miso, pin_signal: ECSPI1_MISO}
@@ -137,13 +135,13 @@ BOARD_InitPins:
   - {pin_num: B12, peripheral: MIPI_DSI, signal: mipi_dsi_d2_p, pin_signal: MIPI_DSI_D2_P}
   - {pin_num: A13, peripheral: MIPI_DSI, signal: mipi_dsi_d3_n, pin_signal: MIPI_DSI_D3_N}
   - {pin_num: B13, peripheral: MIPI_DSI, signal: mipi_dsi_d3_p, pin_signal: MIPI_DSI_D3_P}
-  - {pin_num: D15, peripheral: MIPI_DSI, signal: mipi_dsi_rext, pin_signal: MIPI_DSI_REXT}
-  - {pin_num: A19, peripheral: PCIE1, signal: pcie_rxn_n, pin_signal: PCIE_RXN_N}
-  - {pin_num: B19, peripheral: PCIE1, signal: pcie_rxn_p, pin_signal: PCIE_RXN_P}
-  - {pin_num: A20, peripheral: PCIE1, signal: pcie_txn_n, pin_signal: PCIE_TXN_N}
-  - {pin_num: B20, peripheral: PCIE1, signal: pcie_txn_p, pin_signal: PCIE_TXN_P}
-  - {pin_num: A21, peripheral: PCIE1, signal: pcie_ref_pad_clk_n, pin_signal: PCIE_REF_PAD_CLK_N}
-  - {pin_num: B21, peripheral: PCIE1, signal: pcie_ref_pad_clk_p, pin_signal: PCIE_REF_PAD_CLK_P}
+  - {pin_num: D15, peripheral: MIPI_DSI, signal: mipi_dsi_rext, pin_signal: MIPI_VREG_CAP}
+  - {peripheral: PCIE1, signal: pcie_rxn_n, pin_signal: PCIE_RXN_N}
+  - {peripheral: PCIE1, signal: pcie_rxn_p, pin_signal: PCIE_RXN_P}
+  - {peripheral: PCIE1, signal: pcie_txn_n, pin_signal: PCIE_TXN_N}
+  - {peripheral: PCIE1, signal: pcie_txn_p, pin_signal: PCIE_TXN_P}
+  - {peripheral: PCIE1, signal: pcie_ref_pad_clk_n, pin_signal: PCIE_REF_PAD_CLK_N}
+  - {peripheral: PCIE1, signal: pcie_ref_pad_clk_p, pin_signal: PCIE_REF_PAD_CLK_P}
   - {pin_num: E14, peripheral: UART1, signal: uart_rx, pin_signal: UART1_RXD}
   - {pin_num: F13, peripheral: UART1, signal: uart_tx, pin_signal: UART1_TXD}
   - {pin_num: F15, peripheral: UART2, signal: uart_rx, pin_signal: UART2_RXD}
@@ -155,8 +153,8 @@ BOARD_InitPins:
   - {pin_num: AF9, peripheral: PWM3, signal: pwm_out, pin_signal: SPDIF_TX}
   - {pin_num: A4, peripheral: DRAM, signal: 'dram_dm, 0', pin_signal: DRAM_DM0}
   - {pin_num: F1, peripheral: DRAM, signal: 'dram_dm, 1', pin_signal: DRAM_DM1}
-  - {pin_num: AB1, peripheral: DRAM, signal: 'dram_dm, 2', pin_signal: DRAM_DM2}
-  - {pin_num: AG4, peripheral: DRAM, signal: 'dram_dm, 3', pin_signal: DRAM_DM3}
+  - {peripheral: DRAM, signal: 'dram_dm, 2', pin_signal: DRAM_DM2}
+  - {peripheral: DRAM, signal: 'dram_dm, 3', pin_signal: DRAM_DM3}
   - {pin_num: A5, peripheral: DRAM, signal: 'dram_dq, 00', pin_signal: DRAM_DQ00}
   - {pin_num: B5, peripheral: DRAM, signal: 'dram_dq, 01', pin_signal: DRAM_DQ01}
   - {pin_num: D2, peripheral: DRAM, signal: 'dram_dq, 02', pin_signal: DRAM_DQ02}
@@ -173,30 +171,30 @@ BOARD_InitPins:
   - {pin_num: K1, peripheral: DRAM, signal: 'dram_dq, 13', pin_signal: DRAM_DQ13}
   - {pin_num: E1, peripheral: DRAM, signal: 'dram_dq, 14', pin_signal: DRAM_DQ14}
   - {pin_num: E2, peripheral: DRAM, signal: 'dram_dq, 15', pin_signal: DRAM_DQ15}
-  - {pin_num: AB2, peripheral: DRAM, signal: 'dram_dq, 16', pin_signal: DRAM_DQ16}
-  - {pin_num: AA2, peripheral: DRAM, signal: 'dram_dq, 17', pin_signal: DRAM_DQ17}
-  - {pin_num: W1, peripheral: DRAM, signal: 'dram_dq, 18', pin_signal: DRAM_DQ18}
-  - {pin_num: W2, peripheral: DRAM, signal: 'dram_dq, 19', pin_signal: DRAM_DQ19}
-  - {pin_num: V2, peripheral: DRAM, signal: 'dram_dq, 20', pin_signal: DRAM_DQ20}
-  - {pin_num: V1, peripheral: DRAM, signal: 'dram_dq, 21', pin_signal: DRAM_DQ21}
-  - {pin_num: AC2, peripheral: DRAM, signal: 'dram_dq, 23', pin_signal: DRAM_DQ23}
-  - {pin_num: AC1, peripheral: DRAM, signal: 'dram_dq, 22', pin_signal: DRAM_DQ22}
-  - {pin_num: AG5, peripheral: DRAM, signal: 'dram_dq, 24', pin_signal: DRAM_DQ24}
-  - {pin_num: AF5, peripheral: DRAM, signal: 'dram_dq, 25', pin_signal: DRAM_DQ25}
-  - {pin_num: AD2, peripheral: DRAM, signal: 'dram_dq, 26', pin_signal: DRAM_DQ26}
-  - {pin_num: AD1, peripheral: DRAM, signal: 'dram_dq, 27', pin_signal: DRAM_DQ27}
-  - {pin_num: AE1, peripheral: DRAM, signal: 'dram_dq, 28', pin_signal: DRAM_DQ28}
-  - {pin_num: AF1, peripheral: DRAM, signal: 'dram_dq, 29', pin_signal: DRAM_DQ29}
-  - {pin_num: AG3, peripheral: DRAM, signal: 'dram_dq, 30', pin_signal: DRAM_DQ30}
-  - {pin_num: AF4, peripheral: DRAM, signal: 'dram_dq, 31', pin_signal: DRAM_DQ31}
-  - {pin_num: AG2, peripheral: DRAM, signal: dram_dqs3_p, pin_signal: DRAM_DQS3_P}
-  - {pin_num: AF2, peripheral: DRAM, signal: dram_dqs3_n, pin_signal: DRAM_DQS3_N}
-  - {pin_num: AA1, peripheral: DRAM, signal: dram_dqs2_p, pin_signal: DRAM_DQS2_P}
+  - {peripheral: DRAM, signal: 'dram_dq, 16', pin_signal: DRAM_DQ16}
+  - {peripheral: DRAM, signal: 'dram_dq, 17', pin_signal: DRAM_DQ17}
+  - {peripheral: DRAM, signal: 'dram_dq, 18', pin_signal: DRAM_DQ18}
+  - {peripheral: DRAM, signal: 'dram_dq, 19', pin_signal: DRAM_DQ19}
+  - {peripheral: DRAM, signal: 'dram_dq, 20', pin_signal: DRAM_DQ20}
+  - {peripheral: DRAM, signal: 'dram_dq, 21', pin_signal: DRAM_DQ21}
+  - {peripheral: DRAM, signal: 'dram_dq, 23', pin_signal: DRAM_DQ23}
+  - {peripheral: DRAM, signal: 'dram_dq, 22', pin_signal: DRAM_DQ22}
+  - {peripheral: DRAM, signal: 'dram_dq, 24', pin_signal: DRAM_DQ24}
+  - {peripheral: DRAM, signal: 'dram_dq, 25', pin_signal: DRAM_DQ25}
+  - {peripheral: DRAM, signal: 'dram_dq, 26', pin_signal: DRAM_DQ26}
+  - {peripheral: DRAM, signal: 'dram_dq, 27', pin_signal: DRAM_DQ27}
+  - {peripheral: DRAM, signal: 'dram_dq, 28', pin_signal: DRAM_DQ28}
+  - {peripheral: DRAM, signal: 'dram_dq, 29', pin_signal: DRAM_DQ29}
+  - {peripheral: DRAM, signal: 'dram_dq, 30', pin_signal: DRAM_DQ30}
+  - {peripheral: DRAM, signal: 'dram_dq, 31', pin_signal: DRAM_DQ31}
+  - {peripheral: DRAM, signal: dram_dqs3_p, pin_signal: DRAM_DQS3_P}
+  - {peripheral: DRAM, signal: dram_dqs3_n, pin_signal: DRAM_DQS3_N}
+  - {peripheral: DRAM, signal: dram_dqs2_p, pin_signal: DRAM_DQS2_P}
   - {pin_num: G1, peripheral: DRAM, signal: dram_dqs1_p, pin_signal: DRAM_DQS1_P}
   - {pin_num: B2, peripheral: DRAM, signal: dram_dqs0_n, pin_signal: DRAM_DQS0_N}
   - {pin_num: A2, peripheral: DRAM, signal: dram_dqs0_p, pin_signal: DRAM_DQS0_P}
   - {pin_num: H1, peripheral: DRAM, signal: dram_dqs1_n, pin_signal: DRAM_DQS1_N}
-  - {pin_num: Y1, peripheral: DRAM, signal: dram_dqs2_n, pin_signal: DRAM_DQS2_N}
+  - {peripheral: DRAM, signal: dram_dqs2_n, pin_signal: DRAM_DQS2_N}
   - {pin_num: R1, peripheral: DRAM, signal: dram_reset_n, pin_signal: DRAM_RESET_N}
   - {pin_num: P1, peripheral: DRAM, signal: dram_vref, pin_signal: DRAM_VREF}
   - {pin_num: P2, peripheral: DRAM, signal: dram_zn, pin_signal: DRAM_ZN}
@@ -229,7 +227,7 @@ BOARD_InitPins:
   - {pin_num: B8, peripheral: UART4, signal: uart_tx, pin_signal: ECSPI2_MOSI}
   - {pin_num: AF8, peripheral: PWM1, signal: pwm_out, pin_signal: SPDIF_EXT_CLK}
   - {pin_num: AG9, peripheral: PWM2, signal: pwm_out, pin_signal: SPDIF_RX}
-  - {pin_num: D19, peripheral: PCIE1, signal: pcie_resref, pin_signal: PCIE_RESREF}
+  - {peripheral: PCIE1, signal: pcie_resref, pin_signal: PCIE_RESREF}
   - {pin_num: D13, peripheral: I2C4, signal: i2c_scl, pin_signal: I2C4_SCL}
   - {pin_num: E13, peripheral: I2C4, signal: i2c_sda, pin_signal: I2C4_SDA}
   - {pin_num: AG12, peripheral: uSDHC2, signal: usdhc_vselect, pin_signal: GPIO1_IO04}
@@ -260,31 +258,31 @@ BOARD_InitPins:
   - {pin_num: AF14, peripheral: CCM, signal: 'ccm_ext_clk, 2', pin_signal: GPIO1_IO01}
   - {pin_num: A25, peripheral: SNVS, signal: snvs_onoff, pin_signal: ONOFF}
   - {pin_num: D27, peripheral: CJTAG, signal: jtag_mode, pin_signal: JTAG_MOD}
-  - {pin_num: D26, peripheral: TCU, signal: tcu_test_mode, pin_signal: TEST_MODE}
+  - {pin_num: D26, peripheral: TCU, signal: tcu_test_mode, pin_signal: BOOT_MODE3}
   - {pin_num: AF13, peripheral: GPIO1, signal: 'gpio_io, 03', pin_signal: GPIO1_IO03}
   - {pin_num: AF12, peripheral: GPIO1, signal: 'gpio_io, 05', pin_signal: GPIO1_IO05}
   - {pin_num: AG10, peripheral: GPIO1, signal: 'gpio_io, 08', pin_signal: GPIO1_IO08}
   - {pin_num: AF10, peripheral: GPIO1, signal: 'gpio_io, 09', pin_signal: GPIO1_IO09}
   - {pin_num: AD10, peripheral: GPIO1, signal: 'gpio_io, 10', pin_signal: GPIO1_IO10}
   - {pin_num: AC10, peripheral: GPIO1, signal: 'gpio_io, 11', pin_signal: GPIO1_IO11}
-  - {pin_num: AB18, peripheral: GPIO4, signal: 'gpio_io, 20', pin_signal: SAI1_MCLK}
-  - {pin_num: AF16, peripheral: GPIO4, signal: 'gpio_io, 01', pin_signal: SAI1_RXC}
-  - {pin_num: AG15, peripheral: SRC, signal: 'src_boot_cfg, 0', pin_signal: SAI1_RXD0}
-  - {pin_num: AF15, peripheral: SRC, signal: 'src_boot_cfg, 1', pin_signal: SAI1_RXD1}
-  - {pin_num: AG17, peripheral: SRC, signal: 'src_boot_cfg, 2', pin_signal: SAI1_RXD2}
-  - {pin_num: AF17, peripheral: SRC, signal: 'src_boot_cfg, 3', pin_signal: SAI1_RXD3}
-  - {pin_num: AG19, peripheral: GPIO4, signal: 'gpio_io, 08', pin_signal: SAI1_RXD6}
-  - {pin_num: AG16, peripheral: GPIO4, signal: 'gpio_io, 00', pin_signal: SAI1_RXFS}
-  - {pin_num: AC18, peripheral: GPIO4, signal: 'gpio_io, 11', pin_signal: SAI1_TXC}
-  - {pin_num: AB19, peripheral: GPIO4, signal: 'gpio_io, 10', pin_signal: SAI1_TXFS}
-  - {pin_num: AF18, peripheral: SRC, signal: 'src_boot_cfg, 5', pin_signal: SAI1_RXD5}
-  - {pin_num: AF19, peripheral: SRC, signal: 'src_boot_cfg, 7', pin_signal: SAI1_RXD7}
-  - {pin_num: AG21, peripheral: SRC, signal: 'src_boot_cfg, 10', pin_signal: SAI1_TXD2}
-  - {pin_num: AF21, peripheral: SRC, signal: 'src_boot_cfg, 11', pin_signal: SAI1_TXD3}
-  - {pin_num: AG22, peripheral: SRC, signal: 'src_boot_cfg, 12', pin_signal: SAI1_TXD4}
-  - {pin_num: AF22, peripheral: SRC, signal: 'src_boot_cfg, 13', pin_signal: SAI1_TXD5}
-  - {pin_num: AG23, peripheral: SRC, signal: 'src_boot_cfg, 14', pin_signal: SAI1_TXD6}
-  - {pin_num: AF23, peripheral: SRC, signal: 'src_boot_cfg, 15', pin_signal: SAI1_TXD7}
+  - {peripheral: GPIO4, signal: 'gpio_io, 20', pin_signal: SAI1_MCLK}
+  - {peripheral: GPIO4, signal: 'gpio_io, 01', pin_signal: SAI1_RXC}
+  - {peripheral: SRC, signal: 'src_boot_cfg, 0', pin_signal: SAI1_RXD0}
+  - {peripheral: SRC, signal: 'src_boot_cfg, 1', pin_signal: SAI1_RXD1}
+  - {peripheral: SRC, signal: 'src_boot_cfg, 2', pin_signal: SAI1_RXD2}
+  - {peripheral: SRC, signal: 'src_boot_cfg, 3', pin_signal: SAI1_RXD3}
+  - {peripheral: GPIO4, signal: 'gpio_io, 08', pin_signal: SAI1_RXD6}
+  - {peripheral: GPIO4, signal: 'gpio_io, 00', pin_signal: SAI1_RXFS}
+  - {peripheral: GPIO4, signal: 'gpio_io, 11', pin_signal: SAI1_TXC}
+  - {peripheral: GPIO4, signal: 'gpio_io, 10', pin_signal: SAI1_TXFS}
+  - {peripheral: SRC, signal: 'src_boot_cfg, 5', pin_signal: SAI1_RXD5}
+  - {peripheral: SRC, signal: 'src_boot_cfg, 7', pin_signal: SAI1_RXD7}
+  - {peripheral: SRC, signal: 'src_boot_cfg, 10', pin_signal: SAI1_TXD2}
+  - {peripheral: SRC, signal: 'src_boot_cfg, 11', pin_signal: SAI1_TXD3}
+  - {peripheral: SRC, signal: 'src_boot_cfg, 12', pin_signal: SAI1_TXD4}
+  - {peripheral: SRC, signal: 'src_boot_cfg, 13', pin_signal: SAI1_TXD5}
+  - {peripheral: SRC, signal: 'src_boot_cfg, 14', pin_signal: SAI1_TXD6}
+  - {peripheral: SRC, signal: 'src_boot_cfg, 15', pin_signal: SAI1_TXD7}
   - {pin_num: AC24, peripheral: GPIO4, signal: 'gpio_io, 23', pin_signal: SAI2_RXD0}
   - {pin_num: AD23, peripheral: GPIO4, signal: 'gpio_io, 24', pin_signal: SAI2_TXFS}
   - {pin_num: AD22, peripheral: GPIO4, signal: 'gpio_io, 25', pin_signal: SAI2_TXC}
@@ -298,9 +296,9 @@ BOARD_InitPins:
   - {pin_num: AB15, peripheral: GPIO3, signal: 'gpio_io, 19', pin_signal: SAI5_RXFS}
   - {pin_num: G26, peripheral: SRC, signal: 'src_boot_mode, 0', pin_signal: BOOT_MODE0}
   - {pin_num: G27, peripheral: SRC, signal: 'src_boot_mode, 1', pin_signal: BOOT_MODE1}
-  - {pin_num: AF20, peripheral: SRC, signal: 'src_boot_cfg, 9', pin_signal: SAI1_TXD1}
-  - {pin_num: AG20, peripheral: SRC, signal: 'src_boot_cfg, 8', pin_signal: SAI1_TXD0}
-  - {pin_num: AG18, peripheral: SRC, signal: 'src_boot_cfg, 4', pin_signal: SAI1_RXD4}
+  - {peripheral: SRC, signal: 'src_boot_cfg, 9', pin_signal: SAI1_TXD1}
+  - {peripheral: SRC, signal: 'src_boot_cfg, 8', pin_signal: SAI1_TXD0}
+  - {peripheral: SRC, signal: 'src_boot_cfg, 4', pin_signal: SAI1_RXD4}
  * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
  */
 
@@ -311,6 +309,9 @@ BOARD_InitPins:
  *
  * END ****************************************************************************************************************/
 void BOARD_InitPins(void) {                                /*!< Function assigned for the core: Cortex-A53[a53_0] */
+  /* There are conflicts or other incorrect settings in the configuration, the code below is generated only for 
+     those registers which are set correctly and without a conflict. Open this file in Pins Tool for more details. */
+
     IOMUXC_SetPinMux(IOMUXC_ECSPI1_MISO_ECSPI1_MISO, 0U);
     IOMUXC_SetPinMux(IOMUXC_ECSPI1_MOSI_ECSPI1_MOSI, 0U);
     IOMUXC_SetPinMux(IOMUXC_ECSPI1_SCLK_ECSPI1_SCLK, 0U);
@@ -351,8 +352,6 @@ void BOARD_InitPins(void) {                                /*!< Function assigne
     IOMUXC_SetPinMux(IOMUXC_GPIO1_IO11_GPIO1_IO11, 0U);
     IOMUXC_SetPinMux(IOMUXC_GPIO1_IO12_USB1_OTG_PWR, 0U);
     IOMUXC_SetPinMux(IOMUXC_GPIO1_IO13_USB1_OTG_OC, 0U);
-    IOMUXC_SetPinMux(IOMUXC_GPIO1_IO14_USB2_OTG_PWR, 0U);
-    IOMUXC_SetPinMux(IOMUXC_GPIO1_IO15_USB2_OTG_OC, 0U);
     IOMUXC_SetPinMux(IOMUXC_I2C1_SCL_I2C1_SCL, 0U);
     IOMUXC_SetPinMux(IOMUXC_I2C1_SDA_I2C1_SDA, 0U);
     IOMUXC_SetPinMux(IOMUXC_I2C2_SCL_I2C2_SCL, 0U);
@@ -379,27 +378,6 @@ void BOARD_InitPins(void) {                                /*!< Function assigne
     IOMUXC_SetPinMux(IOMUXC_NAND_RE_B_USDHC3_DATA4, 0U);
     IOMUXC_SetPinMux(IOMUXC_NAND_WE_B_USDHC3_CLK, 0U);
     IOMUXC_SetPinMux(IOMUXC_NAND_WP_B_USDHC3_CMD, 0U);
-    IOMUXC_SetPinMux(IOMUXC_SAI1_MCLK_GPIO4_IO20, 0U);
-    IOMUXC_SetPinMux(IOMUXC_SAI1_RXC_GPIO4_IO01, 0U);
-    IOMUXC_SetPinMux(IOMUXC_SAI1_RXD0_SRC_BOOT_CFG0, 0U);
-    IOMUXC_SetPinMux(IOMUXC_SAI1_RXD1_SRC_BOOT_CFG1, 0U);
-    IOMUXC_SetPinMux(IOMUXC_SAI1_RXD2_SRC_BOOT_CFG2, 0U);
-    IOMUXC_SetPinMux(IOMUXC_SAI1_RXD3_SRC_BOOT_CFG3, 0U);
-    IOMUXC_SetPinMux(IOMUXC_SAI1_RXD4_SRC_BOOT_CFG4, 0U);
-    IOMUXC_SetPinMux(IOMUXC_SAI1_RXD5_SRC_BOOT_CFG5, 0U);
-    IOMUXC_SetPinMux(IOMUXC_SAI1_RXD6_GPIO4_IO08, 0U);
-    IOMUXC_SetPinMux(IOMUXC_SAI1_RXD7_SRC_BOOT_CFG7, 0U);
-    IOMUXC_SetPinMux(IOMUXC_SAI1_RXFS_GPIO4_IO00, 0U);
-    IOMUXC_SetPinMux(IOMUXC_SAI1_TXC_GPIO4_IO11, 0U);
-    IOMUXC_SetPinMux(IOMUXC_SAI1_TXD0_SRC_BOOT_CFG8, 0U);
-    IOMUXC_SetPinMux(IOMUXC_SAI1_TXD1_SRC_BOOT_CFG9, 0U);
-    IOMUXC_SetPinMux(IOMUXC_SAI1_TXD2_SRC_BOOT_CFG10, 0U);
-    IOMUXC_SetPinMux(IOMUXC_SAI1_TXD3_SRC_BOOT_CFG11, 0U);
-    IOMUXC_SetPinMux(IOMUXC_SAI1_TXD4_SRC_BOOT_CFG12, 0U);
-    IOMUXC_SetPinMux(IOMUXC_SAI1_TXD5_SRC_BOOT_CFG13, 0U);
-    IOMUXC_SetPinMux(IOMUXC_SAI1_TXD6_SRC_BOOT_CFG14, 0U);
-    IOMUXC_SetPinMux(IOMUXC_SAI1_TXD7_SRC_BOOT_CFG15, 0U);
-    IOMUXC_SetPinMux(IOMUXC_SAI1_TXFS_GPIO4_IO10, 0U);
     IOMUXC_SetPinMux(IOMUXC_SAI2_MCLK_SAI5_MCLK, 0U);
     IOMUXC_SetPinMux(IOMUXC_SAI2_RXC_SAI5_TX_BCLK, 0U);
     IOMUXC_SetPinMux(IOMUXC_SAI2_RXD0_GPIO4_IO23, 0U);

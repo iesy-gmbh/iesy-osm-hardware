@@ -6,12 +6,16 @@
 /*
  * TEXT BELOW IS USED AS SETTING FOR TOOLS *************************************
 !!GlobalInfo
-product: Pins v9.0
+product: Pins v11.0
 processor: MIMX8MM6xxxKZ
 package_id: MIMX8MM6CVTKZ
 mcu_data: ksdk2_0
-processor_version: 9.0.1
-power_domains: {NVCC_NAND: '1.8'}
+processor_version: 11.0.1
+power_domains: {NVCC_CLK: '1.8', NVCC_DRAM: '1.1', NVCC_ECSPI: '1.8', NVCC_ENET: '1.8', NVCC_GPIO1: '1.8', NVCC_I2C: '1.8', NVCC_JTAG: '1.8', NVCC_NAND: '1.8', NVCC_SAI1: '1.8',
+  NVCC_SAI2: '1.8', NVCC_SAI3: '1.8', NVCC_SAI5: '1.8', NVCC_SD1: '1.8', NVCC_SD2: '1.8', NVCC_SNVS: '1.8', NVCC_SNVS_1P8: '1.8', NVCC_UART: '1.8', PVCC0_1P8: '1.8',
+  PVCC1_1P8: '1.8', PVCC2_1P8: '1.8', VDD_24M_XTAL_1P8: '1.8', VDD_ANA0_1P8: '1.8', VDD_ANA1_1P8: '1.8', VDD_ANA_0P8: '0.8', VDD_ARM: '0.9', VDD_ARM_PLL_0P8: '0.8',
+  VDD_ARM_PLL_1P8: '1.8', VDD_DRAM: '0.9', VDD_DRAM_PLL_0P8: '0.9', VDD_DRAM_PLL_1P8: '1.8', VDD_GPU: '0.9', VDD_MIPI_1P8: '1.8', VDD_PCI_1P8: '1.8', VDD_SNVS_0P8: '0.8',
+  VDD_SOC: '0.8', VDD_USB_1P8: '1.8', VDD_USB_3P3: '3.3', VDD_VPU: '0.9'}
  * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
  */
 
@@ -119,7 +123,7 @@ BOARD_InitPins:
   - {pin_num: AB9, peripheral: USB2, signal: usb_otg_oc, pin_signal: GPIO1_IO15}
   - {pin_num: A7, peripheral: ECSPI1, signal: ecspi_miso, pin_signal: ECSPI1_MISO}
   - {pin_num: B7, peripheral: ECSPI1, signal: ecspi_mosi, pin_signal: ECSPI1_MOSI}
-  - {pin_num: D6, peripheral: ECSPI1, signal: ecspi_sclk, pin_signal: ECSPI1_SCLK}
+  - {pin_num: D6, peripheral: ECSPI1, signal: ecspi_sclk, pin_signal: ECSPI1_SCLK, PE: Enabled}
   - {pin_num: B6, peripheral: ECSPI1, signal: 'ecspi_ss, 0', pin_signal: ECSPI1_SS0}
   - {pin_num: N22, peripheral: QSPI, signal: qspi_a_sclk, pin_signal: NAND_ALE}
   - {pin_num: N24, peripheral: QSPI, signal: qspi_a_ss0_b, pin_signal: NAND_CE0_B}
@@ -160,12 +164,8 @@ BOARD_InitPins:
   - {pin_num: E15, peripheral: UART2, signal: uart_tx, pin_signal: UART2_TXD}
   - {pin_num: D18, peripheral: UART3, signal: uart_tx, pin_signal: UART3_TXD}
   - {pin_num: E18, peripheral: UART3, signal: uart_rx, pin_signal: UART3_RXD}
-  - {pin_num: AC24, peripheral: UART1, signal: uart_cts_b, pin_signal: SAI2_RXD0}
-  - {pin_num: AD23, peripheral: UART1, signal: uart_rts_b, pin_signal: SAI2_TXFS}
   - {pin_num: F19, peripheral: UART2, signal: uart_cts_b, pin_signal: UART4_RXD}
   - {pin_num: F18, peripheral: UART2, signal: uart_rts_b, pin_signal: UART4_TXD}
-  - {pin_num: AF14, peripheral: PWM1, signal: pwm_out, pin_signal: GPIO1_IO01}
-  - {pin_num: D13, peripheral: PWM2, signal: pwm_out, pin_signal: I2C4_SCL}
   - {pin_num: AF9, peripheral: PWM3, signal: pwm_out, pin_signal: SPDIF_TX}
   - {pin_num: A4, peripheral: DRAM, signal: 'dram_dm, 0', pin_signal: DRAM_DM0}
   - {pin_num: F1, peripheral: DRAM, signal: 'dram_dm, 1', pin_signal: DRAM_DM1}
@@ -239,13 +239,82 @@ BOARD_InitPins:
   - {pin_num: AD5, peripheral: DRAM, signal: 'dram_ac, 31', pin_signal: DRAM_AC31}
   - {pin_num: R4, peripheral: DRAM, signal: 'dram_ac, 32', pin_signal: DRAM_AC32}
   - {pin_num: R5, peripheral: DRAM, signal: 'dram_ac, 33', pin_signal: DRAM_AC33}
-  - {pin_num: AF19, peripheral: SAI6, signal: sai_mclk, pin_signal: SAI1_RXD7}
-  - {pin_num: AF18, peripheral: SAI6, signal: 'sai_rx_data, 0', pin_signal: SAI1_RXD5}
-  - {pin_num: AG22, peripheral: SAI6, signal: sai_tx_bclk, pin_signal: SAI1_TXD4}
-  - {pin_num: AF22, peripheral: SAI6, signal: 'sai_tx_data, 0', pin_signal: SAI1_TXD5}
-  - {pin_num: AG23, peripheral: SAI6, signal: sai_tx_sync, pin_signal: SAI1_TXD6}
   - {pin_num: E6, peripheral: UART4, signal: uart_rx, pin_signal: ECSPI2_SCLK}
   - {pin_num: B8, peripheral: UART4, signal: uart_tx, pin_signal: ECSPI2_MOSI}
+  - {pin_num: AF8, peripheral: PWM1, signal: pwm_out, pin_signal: SPDIF_EXT_CLK}
+  - {pin_num: AG9, peripheral: PWM2, signal: pwm_out, pin_signal: SPDIF_RX}
+  - {pin_num: D19, peripheral: PCIE1, signal: pcie_resref, pin_signal: PCIE_RESREF}
+  - {pin_num: D13, peripheral: I2C4, signal: i2c_scl, pin_signal: I2C4_SCL}
+  - {pin_num: E13, peripheral: I2C4, signal: i2c_sda, pin_signal: I2C4_SDA}
+  - {pin_num: AG12, peripheral: uSDHC2, signal: usdhc_vselect, pin_signal: GPIO1_IO04}
+  - {pin_num: E24, peripheral: CCM, signal: ccm_pmic_stby_req, pin_signal: PMIC_STBY_REQ}
+  - {pin_num: A24, peripheral: SNVS, signal: snvs_pmic_on_req, pin_signal: PMIC_ON_REQ}
+  - {pin_num: B24, peripheral: SNVS, signal: snvs_por_b, pin_signal: POR_B}
+  - {pin_num: F24, peripheral: SNVS, signal: snvs_rtc_reset_b, pin_signal: RTC_RESET_B}
+  - {pin_num: A26, peripheral: SNVS, signal: snvs_rtc, pin_signal: RTC_XTALI}
+  - {pin_num: H26, peripheral: XTALOSC, signal: 'xtalosc_clkout, 1', pin_signal: CLKOUT1}
+  - {pin_num: H27, peripheral: XTALOSC, signal: 'xtalosc_clkin, 1', pin_signal: CLKIN1}
+  - {pin_num: R23, peripheral: uSDHC1, signal: usdhc_reset_b, pin_signal: SD1_RESET_B}
+  - {pin_num: AB26, peripheral: uSDHC2, signal: usdhc_reset_b, pin_signal: SD2_RESET_B}
+  - {pin_num: P26, peripheral: uSDHC3, signal: usdhc_reset_b, pin_signal: NAND_READY_B}
+  - {pin_num: AG13, peripheral: WDOG1, signal: wdog_wdog_b, pin_signal: GPIO1_IO02}
+  - {pin_num: AD19, peripheral: SAI5, signal: sai_mclk, pin_signal: SAI2_MCLK}
+  - {pin_num: AF7, peripheral: SAI5, signal: 'sai_rx_data, 0', pin_signal: SAI3_RXD}
+  - {pin_num: AC6, peripheral: SAI5, signal: 'sai_rx_data, 1', pin_signal: SAI3_TXFS}
+  - {pin_num: AB22, peripheral: SAI5, signal: sai_tx_bclk, pin_signal: SAI2_RXC}
+  - {pin_num: AC13, peripheral: SAI5, signal: 'sai_tx_data, 0', pin_signal: SAI5_RXD3}
+  - {pin_num: AC19, peripheral: SAI5, signal: 'sai_tx_data, 1', pin_signal: SAI2_RXFS}
+  - {pin_num: AC14, peripheral: SAI5, signal: sai_tx_sync, pin_signal: SAI5_RXD1}
+  - {pin_num: A8, peripheral: UART4, signal: uart_cts_b, pin_signal: ECSPI2_MISO}
+  - {pin_num: A6, peripheral: UART4, signal: uart_rts_b, pin_signal: ECSPI2_SS0}
+  - {pin_num: AD6, peripheral: PWM4, signal: pwm_out, pin_signal: SAI3_MCLK}
+  - {pin_num: AG6, peripheral: GPIO5, signal: 'gpio_io, 00', pin_signal: SAI3_TXC}
+  - {pin_num: AF6, peripheral: GPIO5, signal: 'gpio_io, 01', pin_signal: SAI3_TXD}
+  - {pin_num: AG14, peripheral: CCM, signal: ccm_enet_phy_ref_clk_root, pin_signal: GPIO1_IO00}
+  - {pin_num: AF14, peripheral: CCM, signal: 'ccm_ext_clk, 2', pin_signal: GPIO1_IO01}
+  - {pin_num: A25, peripheral: SNVS, signal: snvs_onoff, pin_signal: ONOFF}
+  - {pin_num: D27, peripheral: CJTAG, signal: jtag_mode, pin_signal: JTAG_MOD}
+  - {pin_num: D26, peripheral: TCU, signal: tcu_test_mode, pin_signal: TEST_MODE}
+  - {pin_num: AF13, peripheral: GPIO1, signal: 'gpio_io, 03', pin_signal: GPIO1_IO03}
+  - {pin_num: AF12, peripheral: GPIO1, signal: 'gpio_io, 05', pin_signal: GPIO1_IO05}
+  - {pin_num: AG10, peripheral: GPIO1, signal: 'gpio_io, 08', pin_signal: GPIO1_IO08}
+  - {pin_num: AF10, peripheral: GPIO1, signal: 'gpio_io, 09', pin_signal: GPIO1_IO09}
+  - {pin_num: AD10, peripheral: GPIO1, signal: 'gpio_io, 10', pin_signal: GPIO1_IO10}
+  - {pin_num: AC10, peripheral: GPIO1, signal: 'gpio_io, 11', pin_signal: GPIO1_IO11}
+  - {pin_num: AB18, peripheral: GPIO4, signal: 'gpio_io, 20', pin_signal: SAI1_MCLK}
+  - {pin_num: AF16, peripheral: GPIO4, signal: 'gpio_io, 01', pin_signal: SAI1_RXC}
+  - {pin_num: AG15, peripheral: SRC, signal: 'src_boot_cfg, 0', pin_signal: SAI1_RXD0}
+  - {pin_num: AF15, peripheral: SRC, signal: 'src_boot_cfg, 1', pin_signal: SAI1_RXD1}
+  - {pin_num: AG17, peripheral: SRC, signal: 'src_boot_cfg, 2', pin_signal: SAI1_RXD2}
+  - {pin_num: AF17, peripheral: SRC, signal: 'src_boot_cfg, 3', pin_signal: SAI1_RXD3}
+  - {pin_num: AG19, peripheral: GPIO4, signal: 'gpio_io, 08', pin_signal: SAI1_RXD6}
+  - {pin_num: AG16, peripheral: GPIO4, signal: 'gpio_io, 00', pin_signal: SAI1_RXFS}
+  - {pin_num: AC18, peripheral: GPIO4, signal: 'gpio_io, 11', pin_signal: SAI1_TXC}
+  - {pin_num: AB19, peripheral: GPIO4, signal: 'gpio_io, 10', pin_signal: SAI1_TXFS}
+  - {pin_num: AF18, peripheral: SRC, signal: 'src_boot_cfg, 5', pin_signal: SAI1_RXD5}
+  - {pin_num: AF19, peripheral: SRC, signal: 'src_boot_cfg, 7', pin_signal: SAI1_RXD7}
+  - {pin_num: AG21, peripheral: SRC, signal: 'src_boot_cfg, 10', pin_signal: SAI1_TXD2}
+  - {pin_num: AF21, peripheral: SRC, signal: 'src_boot_cfg, 11', pin_signal: SAI1_TXD3}
+  - {pin_num: AG22, peripheral: SRC, signal: 'src_boot_cfg, 12', pin_signal: SAI1_TXD4}
+  - {pin_num: AF22, peripheral: SRC, signal: 'src_boot_cfg, 13', pin_signal: SAI1_TXD5}
+  - {pin_num: AG23, peripheral: SRC, signal: 'src_boot_cfg, 14', pin_signal: SAI1_TXD6}
+  - {pin_num: AF23, peripheral: SRC, signal: 'src_boot_cfg, 15', pin_signal: SAI1_TXD7}
+  - {pin_num: AC24, peripheral: GPIO4, signal: 'gpio_io, 23', pin_signal: SAI2_RXD0}
+  - {pin_num: AD23, peripheral: GPIO4, signal: 'gpio_io, 24', pin_signal: SAI2_TXFS}
+  - {pin_num: AD22, peripheral: GPIO4, signal: 'gpio_io, 25', pin_signal: SAI2_TXC}
+  - {pin_num: AC22, peripheral: GPIO4, signal: 'gpio_io, 26', pin_signal: SAI2_TXD0}
+  - {pin_num: AG7, peripheral: GPIO4, signal: 'gpio_io, 29', pin_signal: SAI3_RXC}
+  - {pin_num: AG8, peripheral: GPIO4, signal: 'gpio_io, 28', pin_signal: SAI3_RXFS}
+  - {pin_num: AD15, peripheral: GPIO3, signal: 'gpio_io, 25', pin_signal: SAI5_MCLK}
+  - {pin_num: AC15, peripheral: GPIO3, signal: 'gpio_io, 20', pin_signal: SAI5_RXC}
+  - {pin_num: AD18, peripheral: GPIO3, signal: 'gpio_io, 21', pin_signal: SAI5_RXD0}
+  - {pin_num: AD13, peripheral: GPIO3, signal: 'gpio_io, 23', pin_signal: SAI5_RXD2}
+  - {pin_num: AB15, peripheral: GPIO3, signal: 'gpio_io, 19', pin_signal: SAI5_RXFS}
+  - {pin_num: G26, peripheral: SRC, signal: 'src_boot_mode, 0', pin_signal: BOOT_MODE0}
+  - {pin_num: G27, peripheral: SRC, signal: 'src_boot_mode, 1', pin_signal: BOOT_MODE1}
+  - {pin_num: AF20, peripheral: SRC, signal: 'src_boot_cfg, 9', pin_signal: SAI1_TXD1}
+  - {pin_num: AG20, peripheral: SRC, signal: 'src_boot_cfg, 8', pin_signal: SAI1_TXD0}
+  - {pin_num: AG18, peripheral: SRC, signal: 'src_boot_cfg, 4', pin_signal: SAI1_RXD4}
  * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
  */
             fsl,pins = <
@@ -253,8 +322,10 @@ BOARD_InitPins:
                 MX8MM_IOMUXC_ECSPI1_MOSI_ECSPI1_MOSI       0x00000116
                 MX8MM_IOMUXC_ECSPI1_SCLK_ECSPI1_SCLK       0x00000116
                 MX8MM_IOMUXC_ECSPI1_SS0_ECSPI1_SS0         0x00000116
+                MX8MM_IOMUXC_ECSPI2_MISO_UART4_DCE_CTS_B   0x00000116
                 MX8MM_IOMUXC_ECSPI2_MOSI_UART4_DCE_TX      0x00000116
                 MX8MM_IOMUXC_ECSPI2_SCLK_UART4_DCE_RX      0x00001916
+                MX8MM_IOMUXC_ECSPI2_SS0_UART4_DCE_RTS_B    0x00000116
                 MX8MM_IOMUXC_ENET_MDC_ENET1_MDC            0x00000116
                 MX8MM_IOMUXC_ENET_MDIO_ENET1_MDIO          0x00000116
                 MX8MM_IOMUXC_ENET_RD0_ENET1_RGMII_RD0      0x00000116
@@ -269,9 +340,18 @@ BOARD_InitPins:
                 MX8MM_IOMUXC_ENET_TD3_ENET1_RGMII_TD3      0x00000116
                 MX8MM_IOMUXC_ENET_TXC_ENET1_RGMII_TXC      0x00000116
                 MX8MM_IOMUXC_ENET_TX_CTL_ENET1_RGMII_TX_CTL 0x00001916
-                MX8MM_IOMUXC_GPIO1_IO01_PWM1_OUT           0x00000116
+                MX8MM_IOMUXC_GPIO1_IO00_CCMSRCGPCMIX_ENET_PHY_REF_CLK_ROOT 0x00000114
+                MX8MM_IOMUXC_GPIO1_IO01_CCMSRCGPCMIX_EXT_CLK2 0x00000116
+                MX8MM_IOMUXC_GPIO1_IO02_WDOG1_WDOG_B       0x00000156
+                MX8MM_IOMUXC_GPIO1_IO03_GPIO1_IO3          0x00000116
+                MX8MM_IOMUXC_GPIO1_IO04_USDHC2_VSELECT     0x00000116
+                MX8MM_IOMUXC_GPIO1_IO05_GPIO1_IO5          0x00000156
                 MX8MM_IOMUXC_GPIO1_IO06_USDHC1_CD_B        0x00000116
                 MX8MM_IOMUXC_GPIO1_IO07_USDHC1_WP          0x00001916
+                MX8MM_IOMUXC_GPIO1_IO08_GPIO1_IO8          0x00000116
+                MX8MM_IOMUXC_GPIO1_IO09_GPIO1_IO9          0x00000116
+                MX8MM_IOMUXC_GPIO1_IO10_GPIO1_IO10         0x00000116
+                MX8MM_IOMUXC_GPIO1_IO11_GPIO1_IO11         0x00000116
                 MX8MM_IOMUXC_GPIO1_IO12_USB1_OTG_PWR       0x00000116
                 MX8MM_IOMUXC_GPIO1_IO13_USB1_OTG_OC        0x00000116
                 MX8MM_IOMUXC_GPIO1_IO14_USB2_OTG_PWR       0x00000116
@@ -282,7 +362,8 @@ BOARD_InitPins:
                 MX8MM_IOMUXC_I2C2_SDA_I2C2_SDA             0x00000116
                 MX8MM_IOMUXC_I2C3_SCL_I2C3_SCL             0x00001916
                 MX8MM_IOMUXC_I2C3_SDA_I2C3_SDA             0x00000116
-                MX8MM_IOMUXC_I2C4_SCL_PWM2_OUT             0x00000116
+                MX8MM_IOMUXC_I2C4_SCL_I2C4_SCL             0x00000116
+                MX8MM_IOMUXC_I2C4_SDA_I2C4_SDA             0x00000116
                 MX8MM_IOMUXC_NAND_ALE_QSPI_A_SCLK          0x00000116
                 MX8MM_IOMUXC_NAND_CE0_B_QSPI_A_SS0_B       0x00000116
                 MX8MM_IOMUXC_NAND_CE1_B_USDHC3_STROBE      0x00000116
@@ -297,16 +378,52 @@ BOARD_InitPins:
                 MX8MM_IOMUXC_NAND_DATA05_USDHC3_DATA1      0x00000116
                 MX8MM_IOMUXC_NAND_DATA06_USDHC3_DATA2      0x00000116
                 MX8MM_IOMUXC_NAND_DATA07_USDHC3_DATA3      0x00000116
+                MX8MM_IOMUXC_NAND_READY_B_USDHC3_RESET_B   0x00000116
                 MX8MM_IOMUXC_NAND_RE_B_USDHC3_DATA4        0x00000116
                 MX8MM_IOMUXC_NAND_WE_B_USDHC3_CLK          0x00000116
                 MX8MM_IOMUXC_NAND_WP_B_USDHC3_CMD          0x00000116
-                MX8MM_IOMUXC_SAI1_RXD5_SAI6_RX_DATA0       0x00000116
-                MX8MM_IOMUXC_SAI1_RXD7_SAI6_MCLK           0x00000116
-                MX8MM_IOMUXC_SAI1_TXD4_SAI6_TX_BCLK        0x00000116
-                MX8MM_IOMUXC_SAI1_TXD5_SAI6_TX_DATA0       0x00000116
-                MX8MM_IOMUXC_SAI1_TXD6_SAI6_TX_SYNC        0x00000116
-                MX8MM_IOMUXC_SAI2_RXD0_UART1_DTE_CTS_B     0x00000116
-                MX8MM_IOMUXC_SAI2_TXFS_UART1_DTE_RTS_B     0x00001916
+                MX8MM_IOMUXC_SAI1_MCLK_GPIO4_IO20          0x00000116
+                MX8MM_IOMUXC_SAI1_RXC_GPIO4_IO1            0x00000116
+                MX8MM_IOMUXC_SAI1_RXD0_CCMSRCGPCMIX_BOOT_CFG0 0x00000116
+                MX8MM_IOMUXC_SAI1_RXD1_CCMSRCGPCMIX_BOOT_CFG1 0x00000116
+                MX8MM_IOMUXC_SAI1_RXD2_CCMSRCGPCMIX_BOOT_CFG2 0x00000116
+                MX8MM_IOMUXC_SAI1_RXD3_CCMSRCGPCMIX_BOOT_CFG3 0x00000116
+                MX8MM_IOMUXC_SAI1_RXD4_CCMSRCGPCMIX_BOOT_CFG4 0x00000116
+                MX8MM_IOMUXC_SAI1_RXD5_CCMSRCGPCMIX_BOOT_CFG5 0x00000116
+                MX8MM_IOMUXC_SAI1_RXD6_GPIO4_IO8           0x00000116
+                MX8MM_IOMUXC_SAI1_RXD7_CCMSRCGPCMIX_BOOT_CFG7 0x00000116
+                MX8MM_IOMUXC_SAI1_RXFS_GPIO4_IO0           0x00000116
+                MX8MM_IOMUXC_SAI1_TXC_GPIO4_IO11           0x00000116
+                MX8MM_IOMUXC_SAI1_TXD0_CCMSRCGPCMIX_BOOT_CFG8 0x00000116
+                MX8MM_IOMUXC_SAI1_TXD1_CCMSRCGPCMIX_BOOT_CFG9 0x00000116
+                MX8MM_IOMUXC_SAI1_TXD2_CCMSRCGPCMIX_BOOT_CFG10 0x00000116
+                MX8MM_IOMUXC_SAI1_TXD3_CCMSRCGPCMIX_BOOT_CFG11 0x00000116
+                MX8MM_IOMUXC_SAI1_TXD4_CCMSRCGPCMIX_BOOT_CFG12 0x00000116
+                MX8MM_IOMUXC_SAI1_TXD5_CCMSRCGPCMIX_BOOT_CFG13 0x00000116
+                MX8MM_IOMUXC_SAI1_TXD6_CCMSRCGPCMIX_BOOT_CFG14 0x00000116
+                MX8MM_IOMUXC_SAI1_TXD7_CCMSRCGPCMIX_BOOT_CFG15 0x00000116
+                MX8MM_IOMUXC_SAI1_TXFS_GPIO4_IO10          0x00001916
+                MX8MM_IOMUXC_SAI2_MCLK_SAI5_MCLK           0x00000116
+                MX8MM_IOMUXC_SAI2_RXC_SAI5_TX_BCLK         0x00000116
+                MX8MM_IOMUXC_SAI2_RXD0_GPIO4_IO23          0x00000116
+                MX8MM_IOMUXC_SAI2_RXFS_SAI5_TX_DATA1       0x00000116
+                MX8MM_IOMUXC_SAI2_TXC_GPIO4_IO25           0x00000116
+                MX8MM_IOMUXC_SAI2_TXD0_GPIO4_IO26          0x00000116
+                MX8MM_IOMUXC_SAI2_TXFS_GPIO4_IO24          0x00001916
+                MX8MM_IOMUXC_SAI3_MCLK_PWM4_OUT            0x00000116
+                MX8MM_IOMUXC_SAI3_RXC_GPIO4_IO29           0x00000116
+                MX8MM_IOMUXC_SAI3_RXD_SAI5_RX_DATA0        0x00000116
+                MX8MM_IOMUXC_SAI3_RXFS_GPIO4_IO28          0x00000116
+                MX8MM_IOMUXC_SAI3_TXC_GPIO5_IO0            0x00001916
+                MX8MM_IOMUXC_SAI3_TXD_GPIO5_IO1            0x00000116
+                MX8MM_IOMUXC_SAI3_TXFS_SAI5_RX_DATA1       0x00000116
+                MX8MM_IOMUXC_SAI5_MCLK_GPIO3_IO25          0x00000116
+                MX8MM_IOMUXC_SAI5_RXC_GPIO3_IO20           0x00000116
+                MX8MM_IOMUXC_SAI5_RXD0_GPIO3_IO21          0x00000116
+                MX8MM_IOMUXC_SAI5_RXD1_SAI5_TX_SYNC        0x00001916
+                MX8MM_IOMUXC_SAI5_RXD2_GPIO3_IO23          0x00000116
+                MX8MM_IOMUXC_SAI5_RXD3_SAI5_TX_DATA0       0x00000116
+                MX8MM_IOMUXC_SAI5_RXFS_GPIO3_IO19          0x00000116
                 MX8MM_IOMUXC_SD1_CLK_USDHC1_CLK            0x00000116
                 MX8MM_IOMUXC_SD1_CMD_USDHC1_CMD            0x00000116
                 MX8MM_IOMUXC_SD1_DATA0_USDHC1_DATA0        0x00000116
@@ -317,6 +434,7 @@ BOARD_InitPins:
                 MX8MM_IOMUXC_SD1_DATA5_USDHC1_DATA5        0x00000116
                 MX8MM_IOMUXC_SD1_DATA6_USDHC1_DATA6        0x00000116
                 MX8MM_IOMUXC_SD1_DATA7_USDHC1_DATA7        0x00000116
+                MX8MM_IOMUXC_SD1_RESET_B_USDHC1_RESET_B    0x00000116
                 MX8MM_IOMUXC_SD2_CD_B_USDHC2_CD_B          0x00000116
                 MX8MM_IOMUXC_SD2_CLK_USDHC2_CLK            0x00000116
                 MX8MM_IOMUXC_SD2_CMD_USDHC2_CMD            0x00000116
@@ -324,7 +442,10 @@ BOARD_InitPins:
                 MX8MM_IOMUXC_SD2_DATA1_USDHC2_DATA1        0x00000116
                 MX8MM_IOMUXC_SD2_DATA2_USDHC2_DATA2        0x00000116
                 MX8MM_IOMUXC_SD2_DATA3_USDHC2_DATA3        0x00000116
+                MX8MM_IOMUXC_SD2_RESET_B_USDHC2_RESET_B    0x00000116
                 MX8MM_IOMUXC_SD2_WP_USDHC2_WP              0x00000116
+                MX8MM_IOMUXC_SPDIF_EXT_CLK_PWM1_OUT        0x00000116
+                MX8MM_IOMUXC_SPDIF_RX_PWM2_OUT             0x00000116
                 MX8MM_IOMUXC_SPDIF_TX_PWM3_OUT             0x00000116
                 MX8MM_IOMUXC_UART1_RXD_UART1_DCE_RX        0x00000116
                 MX8MM_IOMUXC_UART1_TXD_UART1_DCE_TX        0x00000116
@@ -332,7 +453,7 @@ BOARD_InitPins:
                 MX8MM_IOMUXC_UART2_TXD_UART2_DCE_TX        0x00000116
                 MX8MM_IOMUXC_UART3_RXD_UART3_DCE_RX        0x00001916
                 MX8MM_IOMUXC_UART3_TXD_UART3_DCE_TX        0x00000116
-                MX8MM_IOMUXC_UART4_RXD_UART2_CTS_B         0x00000116
+                MX8MM_IOMUXC_UART4_RXD_UART2_DCE_CTS_B     0x00000116
                 MX8MM_IOMUXC_UART4_TXD_UART2_DCE_RTS_B     0x00000116
 
             >;

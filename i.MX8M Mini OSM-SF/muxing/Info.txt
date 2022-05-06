@@ -1,3 +1,0 @@
-Use NXP Config Tool for i.MX Version 9.0 or later
-
-https://www.nxp.com/design/designs/config-tools-for-i-mx-applications-processors:CONFIG-TOOLS-IMX?tab=Design_Tools_Tab

@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding= "UTF-8" ?>
+<configuration name="MIMX8MN4xxxIZ" xsi:schemaLocation="http://mcuxpresso.nxp.com/XSD/mex_configuration_11 http://mcuxpresso.nxp.com/XSD/mex_configuration_11.xsd" uuid="38cb44bc-de84-4195-8cc9-0c8f8c05a0bc" version="11" xmlns="http://mcuxpresso.nxp.com/XSD/mex_configuration_11" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <common>
+      <processor>MIMX8MN4xxxIZ</processor>
+      <package>MIMX8MN4CVTIZ</package>
+      <mcu_data>ksdk2_0</mcu_data>
+      <cores selected="a53_0">
+         <core name="Cortex-A53(core#0)" id="a53_0" description="A53 core0"/>
+         <core name="Cortex-A53(core#1)" id="a53_1" description="A53 core1"/>
+         <core name="Cortex-A53(core#2)" id="a53_2" description="A53 core2"/>
+         <core name="Cortex-A53(core#3)" id="a53_3" description="A53 core3"/>
+         <core name="Cortex-M7F" id="cm7" description="M7 core"/>
+      </cores>
+      <description></description>
+   </common>
+   <preferences>
+      <validate_boot_init_only>true</validate_boot_init_only>
+      <generate_extended_information>false</generate_extended_information>
+      <generate_code_modified_registers_only>false</generate_code_modified_registers_only>
+      <update_include_paths>true</update_include_paths>
+      <generate_registers_defines>false</generate_registers_defines>
+   </preferences>
+   <tools>
+      <pins name="Pins" version="11.0" enabled="true" update_project_code="true">
+         <generated_project_files>
+            <file path="board/pin_mux.c" update_enabled="true"/>
+            <file path="board/pin_mux.dts" update_enabled="true"/>
+            <file path="board/pin_mux.h" update_enabled="true"/>
+         </generated_project_files>
+         <pins_profile>
+            <processor_version>11.0.1</processor_version>
+            <power_domains>
+               <power_domain name="NVCC_CLK" value="1.8"/>
+               <power_domain name="NVCC_DRAM" value="1.1"/>
+               <power_domain name="NVCC_ECSPI" value="1.8"/>
+               <power_domain name="NVCC_ENET" value="1.8"/>
+               <power_domain name="NVCC_GPIO1" value="1.8"/>
+               <power_domain name="NVCC_I2C" value="1.8"/>
+               <power_domain name="NVCC_JTAG" value="1.8"/>
+               <power_domain name="NVCC_NAND" value="1.8"/>
+               <power_domain name="NVCC_SAI2" value="1.8"/>
+               <power_domain name="NVCC_SAI3" value="1.8"/>
+               <power_domain name="NVCC_SAI5" value="1.8"/>
+               <power_domain name="NVCC_SD1" value="1.8"/>
+               <power_domain name="NVCC_SD2" value="1.8"/>
+               <power_domain name="NVCC_SNVS_1P8" value="1.8"/>
+               <power_domain name="NVCC_UART" value="1.8"/>
+               <power_domain name="VDD_ANA1_1P8" value="1.8"/>
+               <power_domain name="VDD_MIPI_1P8" value="1.8"/>
+               <power_domain name="VDD_USB_1P8" value="1.8"/>
+               <power_domain name="VDD_USB_3P3" value="3.3"/>
+            </power_domains>
+         </pins_profile>
+         <functions_list>
+            <function name="BOARD_InitPins">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>false</callFromInitBoot>
+                  <coreID>a53_0</coreID>
+               </options>
+               <dependencies/>
+               <pins>
+                  <pin peripheral="DRAM" signal="dram_dqs0_p" pin_num="A2" pin_signal="DRAM_DQS0_P"/>
+                  <pin peripheral="DRAM" signal="dram_dqs0_n" pin_num="B2" pin_signal="DRAM_DQS0_N"/>
+                  <pin peripheral="DRAM" signal="dram_dm, 0" pin_num="A4" pin_signal="DRAM_DM0"/>
+                  <pin peripheral="DRAM" signal="dram_dq, 00" pin_num="A5" pin_signal="DRAM_DQ00"/>
+                  <pin peripheral="DRAM" signal="dram_dq, 01" pin_num="B5" pin_signal="DRAM_DQ01"/>
+                  <pin peripheral="DRAM" signal="dram_dq, 02" pin_num="D2" pin_signal="DRAM_DQ02"/>
+                  <pin peripheral="DRAM" signal="dram_dq, 03" pin_num="D1" pin_signal="DRAM_DQ03"/>
+                  <pin peripheral="DRAM" signal="dram_dq, 04" pin_num="C1" pin_signal="DRAM_DQ04"/>
+                  <pin peripheral="DRAM" signal="dram_dq, 05" pin_num="B1" pin_signal="DRAM_DQ05"/>
+                  <pin peripheral="DRAM" signal="dram_dq, 06" pin_num="A3" pin_signal="DRAM_DQ06"/>
+                  <pin peripheral="DRAM" signal="dram_dq, 07" pin_num="B4" pin_signal="DRAM_DQ07"/>
+                  <pin peripheral="DRAM" signal="dram_dqs1_n" pin_num="H1" pin_signal="DRAM_DQS1_N"/>
+                  <pin peripheral="DRAM" signal="dram_dqs1_p" pin_num="G1" pin_signal="DRAM_DQS1_P"/>
+                  <pin peripheral="DRAM" signal="dram_dm, 1" pin_num="F1" pin_signal="DRAM_DM1"/>
+                  <pin peripheral="DRAM" signal="dram_dq, 08" pin_num="F2" pin_signal="DRAM_DQ08"/>
+                  <pin peripheral="DRAM" signal="dram_dq, 09" pin_num="G2" pin_signal="DRAM_DQ09"/>
+                  <pin peripheral="DRAM" signal="dram_dq, 10" pin_num="J1" pin_signal="DRAM_DQ10"/>
+                  <pin peripheral="DRAM" signal="dram_dq, 11" pin_num="J2" pin_signal="DRAM_DQ11"/>
+                  <pin peripheral="DRAM" signal="dram_dq, 12" pin_num="K2" pin_signal="DRAM_DQ12"/>
+                  <pin peripheral="DRAM" signal="dram_dq, 13" pin_num="K1" pin_signal="DRAM_DQ13"/>
+                  <pin peripheral="DRAM" signal="dram_dq, 14" pin_num="E1" pin_signal="DRAM_DQ14"/>
+                  <pin peripheral="DRAM" signal="dram_dq, 15" pin_num="E2" pin_signal="DRAM_DQ15"/>
+                  <pin peripheral="DRAM" signal="dram_zn" pin_num="P2" pin_signal="DRAM_ZN"/>
+                  <pin peripheral="DRAM" signal="dram_reset_n" pin_num="R1" pin_signal="DRAM_RESET_N"/>
+                  <pin peripheral="DRAM" signal="dram_ac, 00" pin_num="F4" pin_signal="DRAM_AC00"/>
+                  <pin peripheral="DRAM" signal="dram_ac, 01" pin_num="F5" pin_signal="DRAM_AC01"/>
+                  <pin peripheral="DRAM" signal="dram_ac, 02" pin_num="K4" pin_signal="DRAM_AC02"/>
+                  <pin peripheral="DRAM" signal="dram_ac, 03" pin_num="J4" pin_signal="DRAM_AC03"/>
+                  <pin peripheral="DRAM" signal="dram_ac, 04" pin_num="L2" pin_signal="DRAM_AC04"/>
+                  <pin peripheral="DRAM" signal="dram_ac, 08" pin_num="J6" pin_signal="DRAM_AC08"/>
+                  <pin peripheral="DRAM" signal="dram_ac, 09" pin_num="K6" pin_signal="DRAM_AC09"/>
+                  <pin peripheral="DRAM" signal="dram_ac, 10" pin_num="E4" pin_signal="DRAM_AC10"/>
+                  <pin peripheral="DRAM" signal="dram_ac, 11" pin_num="D5" pin_signal="DRAM_AC11"/>
+                  <pin peripheral="DRAM" signal="dram_ac, 12" pin_num="N4" pin_signal="DRAM_AC12"/>
+                  <pin peripheral="DRAM" signal="dram_ac, 13" pin_num="N5" pin_signal="DRAM_AC13"/>
+                  <pin peripheral="DRAM" signal="dram_ac, 20" pin_num="AB4" pin_signal="DRAM_AC20"/>
+                  <pin peripheral="DRAM" signal="dram_ac, 21" pin_num="AB5" pin_signal="DRAM_AC21"/>
+                  <pin peripheral="DRAM" signal="dram_ac, 22" pin_num="W4" pin_signal="DRAM_AC22"/>
+                  <pin peripheral="DRAM" signal="dram_ac, 23" pin_num="V4" pin_signal="DRAM_AC23"/>
+                  <pin peripheral="DRAM" signal="dram_ac, 24" pin_num="U2" pin_signal="DRAM_AC24"/>
+                  <pin peripheral="DRAM" signal="dram_ac, 25" pin_num="U1" pin_signal="DRAM_AC25"/>
+                  <pin peripheral="DRAM" signal="dram_ac, 28" pin_num="W6" pin_signal="DRAM_AC28"/>
+                  <pin peripheral="DRAM" signal="dram_ac, 29" pin_num="V6" pin_signal="DRAM_AC29"/>
+                  <pin peripheral="DRAM" signal="dram_ac, 30" pin_num="AC4" pin_signal="DRAM_AC30"/>
+                  <pin peripheral="DRAM" signal="dram_ac, 31" pin_num="AD5" pin_signal="DRAM_AC31"/>
+                  <pin peripheral="DRAM" signal="dram_ac, 32" pin_num="R4" pin_signal="DRAM_AC32"/>
+                  <pin peripheral="DRAM" signal="dram_ac, 33" pin_num="R5" pin_signal="DRAM_AC33"/>
+                  <pin peripheral="DRAM" signal="dram_ac, 05" pin_num="L1" pin_signal="DRAM_AC05"/>
+                  <pin peripheral="NAND" signal="nand_ale" pin_num="N22" pin_signal="NAND_ALE"/>
+                  <pin peripheral="NAND" signal="nand_ce0_b" pin_num="N24" pin_signal="NAND_CE0_B"/>
+                  <pin peripheral="NAND" signal="nand_ce1_b" pin_num="P27" pin_signal="NAND_CE1_B"/>
+                  <pin peripheral="NAND" signal="nand_ce2_b" pin_num="M27" pin_signal="NAND_CE2_B"/>
+                  <pin peripheral="NAND" signal="nand_ce3_b" pin_num="L27" pin_signal="NAND_CE3_B"/>
+                  <pin peripheral="NAND" signal="nand_cle" pin_num="K27" pin_signal="NAND_CLE"/>
+                  <pin peripheral="NAND" signal="nand_data, 00" pin_num="P23" pin_signal="NAND_DATA00"/>
+                  <pin peripheral="NAND" signal="nand_data, 01" pin_num="K24" pin_signal="NAND_DATA01"/>
+                  <pin peripheral="NAND" signal="nand_data, 02" pin_num="K23" pin_signal="NAND_DATA02"/>
+                  <pin peripheral="NAND" signal="nand_data, 03" pin_num="N23" pin_signal="NAND_DATA03"/>
+                  <pin peripheral="NAND" signal="nand_data, 04" pin_num="M26" pin_signal="NAND_DATA04"/>
+                  <pin peripheral="NAND" signal="nand_data, 05" pin_num="L26" pin_signal="NAND_DATA05"/>
+                  <pin peripheral="NAND" signal="nand_data, 06" pin_num="K26" pin_signal="NAND_DATA06"/>
+                  <pin peripheral="NAND" signal="nand_data, 07" pin_num="N26" pin_signal="NAND_DATA07"/>
+                  <pin peripheral="NAND" signal="nand_dqs" pin_num="R22" pin_signal="NAND_DQS"/>
+                  <pin peripheral="NAND" signal="nand_re_b" pin_num="N27" pin_signal="NAND_RE_B"/>
+                  <pin peripheral="NAND" signal="nand_ready_b" pin_num="P26" pin_signal="NAND_READY_B"/>
+                  <pin peripheral="NAND" signal="nand_we_b" pin_num="R26" pin_signal="NAND_WE_B"/>
+                  <pin peripheral="NAND" signal="nand_wp_b" pin_num="R27" pin_signal="NAND_WP_B"/>
+                  <pin peripheral="uSDHC1" signal="usdhc_clk" pin_num="V26" pin_signal="SD1_CLK"/>
+                  <pin peripheral="uSDHC1" signal="usdhc_cmd" pin_num="V27" pin_signal="SD1_CMD"/>
+                  <pin peripheral="uSDHC1" signal="usdhc_data, 0" pin_num="Y27" pin_signal="SD1_DATA0"/>
+                  <pin peripheral="uSDHC1" signal="usdhc_data, 1" pin_num="Y26" pin_signal="SD1_DATA1"/>
+                  <pin peripheral="uSDHC1" signal="usdhc_data, 2" pin_num="T27" pin_signal="SD1_DATA2"/>
+                  <pin peripheral="uSDHC1" signal="usdhc_data, 3" pin_num="T26" pin_signal="SD1_DATA3"/>
+                  <pin peripheral="uSDHC1" signal="usdhc_data, 4" pin_num="U27" pin_signal="SD1_DATA4"/>
+                  <pin peripheral="uSDHC1" signal="usdhc_data, 5" pin_num="U26" pin_signal="SD1_DATA5"/>
+                  <pin peripheral="uSDHC1" signal="usdhc_data, 6" pin_num="W27" pin_signal="SD1_DATA6"/>
+                  <pin peripheral="uSDHC1" signal="usdhc_data, 7" pin_num="W26" pin_signal="SD1_DATA7"/>
+                  <pin peripheral="uSDHC1" signal="usdhc_reset_b" pin_num="R23" pin_signal="SD1_RESET_B"/>
+                  <pin peripheral="uSDHC1" signal="usdhc_strobe" pin_num="R24" pin_signal="SD1_STROBE"/>
+                  <pin peripheral="uSDHC2" signal="usdhc_clk" pin_num="W23" pin_signal="SD2_CLK"/>
+                  <pin peripheral="uSDHC2" signal="usdhc_cmd" pin_num="W24" pin_signal="SD2_CMD"/>
+                  <pin peripheral="uSDHC2" signal="usdhc_data, 0" pin_num="AB23" pin_signal="SD2_DATA0"/>
+                  <pin peripheral="uSDHC2" signal="usdhc_data, 1" pin_num="AB24" pin_signal="SD2_DATA1"/>
+                  <pin peripheral="uSDHC2" signal="usdhc_data, 2" pin_num="V24" pin_signal="SD2_DATA2"/>
+                  <pin peripheral="uSDHC2" signal="usdhc_data, 3" pin_num="V23" pin_signal="SD2_DATA3"/>
+                  <pin peripheral="uSDHC2" signal="usdhc_reset_b" pin_num="AB26" pin_signal="SD2_RESET_B"/>
+                  <pin peripheral="uSDHC2" signal="usdhc_wp" pin_num="AA27" pin_signal="SD2_WP"/>
+                  <pin peripheral="uSDHC2" signal="usdhc_cd_b" pin_num="AA26" pin_signal="SD2_CD_B"/>
+                  <pin peripheral="SNVS" signal="snvs_rtc_reset_b" pin_num="F24" pin_signal="RTC_RESET_B"/>
+                  <pin peripheral="SNVS" signal="snvs_por_b" pin_num="B24" pin_signal="POR_B"/>
+                  <pin peripheral="SNVS" signal="snvs_pmic_on_req" pin_num="A24" pin_signal="PMIC_ON_REQ"/>
+                  <pin peripheral="CCM" signal="ccm_pmic_stby_req" pin_num="E24" pin_signal="PMIC_STBY_REQ"/>
+                  <pin peripheral="SNVS" signal="snvs_onoff" pin_num="A25" pin_signal="ONOFF"/>
+                  <pin peripheral="SNVS" signal="snvs_rtc" pin_num="A26" pin_signal="RTC_XTALI"/>
+                  <pin peripheral="XTALOSC" signal="xtalosc_xtal_in_24m" pin_num="B27" pin_signal="XTALI_24M"/>
+                  <pin peripheral="XTALOSC" signal="xtalosc_xtal_out_24m" pin_num="C26" pin_signal="XTALO_24M"/>
+                  <pin peripheral="USB1" signal="usb_id" pin_num="D22" pin_signal="USB1_ID"/>
+                  <pin peripheral="USB1" signal="usb_txrtune" pin_num="E19" pin_signal="USB1_TXRTUNE"/>
+                  <pin peripheral="USB1" signal="usb_vbus" pin_num="F22" pin_signal="USB1_VBUS"/>
+                  <pin peripheral="USB1" signal="usb_dn" pin_num="A22" pin_signal="USB1_DN"/>
+                  <pin peripheral="USB1" signal="usb_dp" pin_num="B22" pin_signal="USB1_DP"/>
+                  <pin peripheral="MIPI_CSI" signal="mipi_csi_clk_n" pin_num="A16" pin_signal="MIPI_CSI_CLK_N"/>
+                  <pin peripheral="MIPI_CSI" signal="mipi_csi_clk_p" pin_num="B16" pin_signal="MIPI_CSI_CLK_P"/>
+                  <pin peripheral="MIPI_CSI" signal="mipi_csi_d0_n" pin_num="A14" pin_signal="MIPI_CSI_D0_N"/>
+                  <pin peripheral="MIPI_CSI" signal="mipi_csi_d0_p" pin_num="B14" pin_signal="MIPI_CSI_D0_P"/>
+                  <pin peripheral="MIPI_CSI" signal="mipi_csi_d1_n" pin_num="A15" pin_signal="MIPI_CSI_D1_N"/>
+                  <pin peripheral="MIPI_CSI" signal="mipi_csi_d1_p" pin_num="B15" pin_signal="MIPI_CSI_D1_P"/>
+                  <pin peripheral="MIPI_CSI" signal="mipi_csi_d2_n" pin_num="A17" pin_signal="MIPI_CSI_D2_N"/>
+                  <pin peripheral="MIPI_CSI" signal="mipi_csi_d2_p" pin_num="B17" pin_signal="MIPI_CSI_D2_P"/>
+                  <pin peripheral="MIPI_CSI" signal="mipi_csi_d3_n" pin_num="A18" pin_signal="MIPI_CSI_D3_N"/>
+                  <pin peripheral="MIPI_CSI" signal="mipi_csi_d3_p" pin_num="B18" pin_signal="MIPI_CSI_D3_P"/>
+                  <pin peripheral="MIPI_DSI" signal="mipi_dsi_clk_n" pin_num="A11" pin_signal="MIPI_DSI_CLK_N"/>
+                  <pin peripheral="MIPI_DSI" signal="mipi_dsi_clk_p" pin_num="B11" pin_signal="MIPI_DSI_CLK_P"/>
+                  <pin peripheral="MIPI_DSI" signal="mipi_dsi_d0_n" pin_num="A9" pin_signal="MIPI_DSI_D0_N"/>
+                  <pin peripheral="MIPI_DSI" signal="mipi_dsi_d0_p" pin_num="B9" pin_signal="MIPI_DSI_D0_P"/>
+                  <pin peripheral="MIPI_DSI" signal="mipi_dsi_d1_n" pin_num="A10" pin_signal="MIPI_DSI_D1_N"/>
+                  <pin peripheral="MIPI_DSI" signal="mipi_dsi_d1_p" pin_num="B10" pin_signal="MIPI_DSI_D1_P"/>
+                  <pin peripheral="MIPI_DSI" signal="mipi_dsi_d2_n" pin_num="A12" pin_signal="MIPI_DSI_D2_N"/>
+                  <pin peripheral="MIPI_DSI" signal="mipi_dsi_d2_p" pin_num="B12" pin_signal="MIPI_DSI_D2_P"/>
+                  <pin peripheral="MIPI_DSI" signal="mipi_dsi_d3_n" pin_num="A13" pin_signal="MIPI_DSI_D3_N"/>
+                  <pin peripheral="MIPI_DSI" signal="mipi_dsi_d3_p" pin_num="B13" pin_signal="MIPI_DSI_D3_P"/>
+                  <pin peripheral="MIPI_DSI" signal="mipi_vreg_cap" pin_num="D15" pin_signal="MIPI_VREG_CAP"/>
+                  <pin peripheral="ECSPI1" signal="ecspi_miso" pin_num="A7" pin_signal="ECSPI1_MISO"/>
+                  <pin peripheral="ECSPI1" signal="ecspi_mosi" pin_num="B7" pin_signal="ECSPI1_MOSI"/>
+                  <pin peripheral="ECSPI1" signal="ecspi_sclk" pin_num="D6" pin_signal="ECSPI1_SCLK"/>
+                  <pin peripheral="ECSPI1" signal="ecspi_ss, 0" pin_num="B6" pin_signal="ECSPI1_SS0"/>
+                  <pin peripheral="ECSPI2" signal="ecspi_miso" pin_num="A8" pin_signal="ECSPI2_MISO"/>
+                  <pin peripheral="ECSPI2" signal="ecspi_mosi" pin_num="B8" pin_signal="ECSPI2_MOSI"/>
+                  <pin peripheral="ECSPI2" signal="ecspi_sclk" pin_num="E6" pin_signal="ECSPI2_SCLK"/>
+                  <pin peripheral="ECSPI2" signal="ecspi_ss, 0" pin_num="A6" pin_signal="ECSPI2_SS0"/>
+                  <pin peripheral="UART1" signal="uart_rx" pin_num="E14" pin_signal="UART1_RXD"/>
+                  <pin peripheral="UART1" signal="uart_tx" pin_num="F13" pin_signal="UART1_TXD"/>
+                  <pin peripheral="UART2" signal="uart_rx" pin_num="F15" pin_signal="UART2_RXD"/>
+                  <pin peripheral="UART2" signal="uart_tx" pin_num="E15" pin_signal="UART2_TXD"/>
+                  <pin peripheral="UART3" signal="uart_rx" pin_num="E18" pin_signal="UART3_RXD"/>
+                  <pin peripheral="UART3" signal="uart_tx" pin_num="D18" pin_signal="UART3_TXD"/>
+                  <pin peripheral="UART4" signal="uart_rx" pin_num="F19" pin_signal="UART4_RXD"/>
+                  <pin peripheral="UART4" signal="uart_tx" pin_num="F18" pin_signal="UART4_TXD"/>
+                  <pin peripheral="ENET1" signal="enet_rgmii_tx_ctl" pin_num="AF24" pin_signal="ENET_TX_CTL"/>
+                  <pin peripheral="ENET1" signal="enet_rgmii_txc" pin_num="AG24" pin_signal="ENET_TXC"/>
+                  <pin peripheral="ENET1" signal="enet_rgmii_td, 0" pin_num="AG26" pin_signal="ENET_TD0"/>
+                  <pin peripheral="ENET1" signal="enet_rgmii_td, 1" pin_num="AF26" pin_signal="ENET_TD1"/>
+                  <pin peripheral="ENET1" signal="enet_rgmii_td, 2" pin_num="AG25" pin_signal="ENET_TD2"/>
+                  <pin peripheral="ENET1" signal="enet_rgmii_td, 3" pin_num="AF25" pin_signal="ENET_TD3"/>
+                  <pin peripheral="ENET1" signal="enet_rgmii_rx_ctl" pin_num="AF27" pin_signal="ENET_RX_CTL"/>
+                  <pin peripheral="ENET1" signal="enet_rgmii_rxc" pin_num="AE26" pin_signal="ENET_RXC"/>
+                  <pin peripheral="ENET1" signal="enet_rgmii_rd, 0" pin_num="AE27" pin_signal="ENET_RD0"/>
+                  <pin peripheral="ENET1" signal="enet_rgmii_rd, 1" pin_num="AD27" pin_signal="ENET_RD1"/>
+                  <pin peripheral="ENET1" signal="enet_rgmii_rd, 2" pin_num="AD26" pin_signal="ENET_RD2"/>
+                  <pin peripheral="ENET1" signal="enet_rgmii_rd, 3" pin_num="AC26" pin_signal="ENET_RD3"/>
+                  <pin peripheral="ENET1" signal="enet_mdio" pin_num="AB27" pin_signal="ENET_MDIO"/>
+                  <pin peripheral="ENET1" signal="enet_mdc" pin_num="AC27" pin_signal="ENET_MDC"/>
+                  <pin peripheral="I2C1" signal="i2c_scl" pin_num="E9" pin_signal="I2C1_SCL"/>
+                  <pin peripheral="I2C1" signal="i2c_sda" pin_num="F9" pin_signal="I2C1_SDA"/>
+                  <pin peripheral="I2C2" signal="i2c_scl" pin_num="D10" pin_signal="I2C2_SCL"/>
+                  <pin peripheral="I2C2" signal="i2c_sda" pin_num="D9" pin_signal="I2C2_SDA"/>
+                  <pin peripheral="I2C3" signal="i2c_scl" pin_num="E10" pin_signal="I2C3_SCL"/>
+                  <pin peripheral="I2C3" signal="i2c_sda" pin_num="F10" pin_signal="I2C3_SDA"/>
+                  <pin peripheral="I2C4" signal="i2c_scl" pin_num="D13" pin_signal="I2C4_SCL"/>
+                  <pin peripheral="I2C4" signal="i2c_sda" pin_num="E13" pin_signal="I2C4_SDA"/>
+                  <pin peripheral="SRC" signal="src_boot_mode, 2" pin_num="C27" pin_signal="BOOT_MODE2"/>
+                  <pin peripheral="JTAG" signal="jtag_tms" pin_num="F27" pin_signal="JTAG_TMS"/>
+                  <pin peripheral="JTAG" signal="jtag_tdo" pin_num="E26" pin_signal="JTAG_TDO"/>
+                  <pin peripheral="JTAG" signal="jtag_tdi" pin_num="E27" pin_signal="JTAG_TDI"/>
+                  <pin peripheral="JTAG" signal="jtag_tck" pin_num="F26" pin_signal="JTAG_TCK"/>
+                  <pin peripheral="JTAG" signal="jtag_mode" pin_num="D27" pin_signal="JTAG_MOD"/>
+                  <pin peripheral="SRC" signal="src_boot_mode, 3" pin_num="D26" pin_signal="BOOT_MODE3"/>
+                  <pin peripheral="SRC" signal="src_boot_mode, 0" pin_num="G26" pin_signal="BOOT_MODE0"/>
+                  <pin peripheral="SRC" signal="src_boot_mode, 1" pin_num="G27" pin_signal="BOOT_MODE1"/>
+                  <pin peripheral="GPIO1" signal="gpio_io, 00" pin_num="AG14" pin_signal="GPIO1_IO00"/>
+                  <pin peripheral="GPIO1" signal="gpio_io, 01" pin_num="AF14" pin_signal="GPIO1_IO01"/>
+                  <pin peripheral="GPIO1" signal="gpio_io, 02" pin_num="AG13" pin_signal="GPIO1_IO02"/>
+                  <pin peripheral="GPIO1" signal="gpio_io, 03" pin_num="AF13" pin_signal="GPIO1_IO03"/>
+                  <pin peripheral="GPIO1" signal="gpio_io, 04" pin_num="AG12" pin_signal="GPIO1_IO04"/>
+                  <pin peripheral="GPIO1" signal="gpio_io, 05" pin_num="AF12" pin_signal="GPIO1_IO05"/>
+                  <pin peripheral="GPIO1" signal="gpio_io, 06" pin_num="AG11" pin_signal="GPIO1_IO06"/>
+                  <pin peripheral="GPIO1" signal="gpio_io, 07" pin_num="AF11" pin_signal="GPIO1_IO07"/>
+                  <pin peripheral="GPIO1" signal="gpio_io, 08" pin_num="AG10" pin_signal="GPIO1_IO08"/>
+                  <pin peripheral="GPIO1" signal="gpio_io, 09" pin_num="AF10" pin_signal="GPIO1_IO09"/>
+                  <pin peripheral="GPIO1" signal="gpio_io, 10" pin_num="AD10" pin_signal="GPIO1_IO10"/>
+                  <pin peripheral="GPIO1" signal="gpio_io, 11" pin_num="AC10" pin_signal="GPIO1_IO11"/>
+                  <pin peripheral="GPIO1" signal="gpio_io, 12" pin_num="AB10" pin_signal="GPIO1_IO12"/>
+                  <pin peripheral="GPIO1" signal="gpio_io, 13" pin_num="AD9" pin_signal="GPIO1_IO13"/>
+                  <pin peripheral="GPIO1" signal="gpio_io, 14" pin_num="AC9" pin_signal="GPIO1_IO14"/>
+                  <pin peripheral="GPIO1" signal="gpio_io, 15" pin_num="AB9" pin_signal="GPIO1_IO15"/>
+                  <pin peripheral="SAI2" signal="sai_mclk" pin_num="AD19" pin_signal="SAI2_MCLK"/>
+                  <pin peripheral="SAI2" signal="sai_rx_bclk" pin_num="AB22" pin_signal="SAI2_RXC"/>
+                  <pin peripheral="SAI2" signal="sai_rx_data, 0" pin_num="AC24" pin_signal="SAI2_RXD0"/>
+                  <pin peripheral="SAI2" signal="sai_rx_data, 1" pin_num="AC19" pin_signal="SAI2_RXFS"/>
+                  <pin peripheral="SAI2" signal="sai_tx_bclk" pin_num="AD22" pin_signal="SAI2_TXC"/>
+                  <pin peripheral="SAI2" signal="sai_tx_data, 0" pin_num="AC22" pin_signal="SAI2_TXD0"/>
+                  <pin peripheral="SAI2" signal="sai_tx_sync" pin_num="AD23" pin_signal="SAI2_TXFS"/>
+                  <pin peripheral="SAI3" signal="sai_mclk" pin_num="AD6" pin_signal="SAI3_MCLK"/>
+                  <pin peripheral="SAI3" signal="sai_rx_bclk" pin_num="AG7" pin_signal="SAI3_RXC"/>
+                  <pin peripheral="SAI3" signal="sai_rx_data, 0" pin_num="AF7" pin_signal="SAI3_RXD"/>
+                  <pin peripheral="SAI3" signal="sai_rx_data, 1" pin_num="AG8" pin_signal="SAI3_RXFS"/>
+                  <pin peripheral="SAI3" signal="sai_tx_bclk" pin_num="AG6" pin_signal="SAI3_TXC"/>
+                  <pin peripheral="SAI3" signal="sai_tx_data, 0" pin_num="AF6" pin_signal="SAI3_TXD"/>
+                  <pin peripheral="SAI3" signal="sai_tx_sync" pin_num="AC6" pin_signal="SAI3_TXFS"/>
+                  <pin peripheral="SPDIF1" signal="spdif_ext_clk" pin_num="AF8" pin_signal="SPDIF_EXT_CLK"/>
+                  <pin peripheral="SPDIF1" signal="spdif_in" pin_num="AG9" pin_signal="SPDIF_RX"/>
+                  <pin peripheral="SPDIF1" signal="spdif_out" pin_num="AF9" pin_signal="SPDIF_TX"/>
+                  <pin peripheral="SAI5" signal="sai_mclk" pin_num="AD15" pin_signal="SAI5_MCLK"/>
+                  <pin peripheral="SAI5" signal="sai_rx_bclk" pin_num="AC15" pin_signal="SAI5_RXC"/>
+                  <pin peripheral="SAI5" signal="sai_rx_data, 0" pin_num="AD18" pin_signal="SAI5_RXD0"/>
+                  <pin peripheral="SAI5" signal="sai_rx_data, 1" pin_num="AC14" pin_signal="SAI5_RXD1"/>
+                  <pin peripheral="SAI5" signal="sai_rx_data, 2" pin_num="AD13" pin_signal="SAI5_RXD2"/>
+                  <pin peripheral="SAI5" signal="sai_rx_data, 3" pin_num="AC13" pin_signal="SAI5_RXD3"/>
+                  <pin peripheral="SAI5" signal="sai_rx_sync" pin_num="AB15" pin_signal="SAI5_RXFS"/>
+               </pins>
+            </function>
+         </functions_list>
+      </pins>
+      <ddr name="DDR" version="1.0" enabled="true" update_project_code="true">
+         <generated_project_files>
+            <file path="board/ddr_config.ds" update_enabled="true"/>
+            <file path="board/ddr_timing.c" update_enabled="true"/>
+         </generated_project_files>
+         <components>
+            <component name="DDRC" uuid="" type="DDRC" type_id="DDRC" mode="basic_mode" peripheral="DDRC" enabled="true" comment="" custom_name_enabled="false" editing_lock="false">
+               <config_set name="DDRC" quick_selection="lpddr4_config_set">
+                  <struct name="deviceInformation">
+                     <setting name="memoryType" value="LPDDR4"/>
+                     <setting name="densityPerChannel" value="8"/>
+                     <setting name="numChipSelects" value="2"/>
+                     <setting name="numRowAddresses" value="16"/>
+                     <setting name="numColAddresses" value="10"/>
+                     <setting name="numBankAddresses" value="3"/>
+                     <setting name="busWidth" value="16"/>
+                     <setting name="numPstates" value="pstates_0"/>
+                     <setting name="clockFreqMHz" value="1600"/>
+                  </struct>
+                  <struct name="boardConfig">
+                     <setting name="uartPorts" value="UART2"/>
+                     <setting name="enableDisableDBI" value="disable"/>
+                  </struct>
+                  <struct name="odtConfig">
+                     <struct name="odtReadConfig">
+                        <setting name="phy_odt" value="40 ohm"/>
+                        <setting name="dram_driver_strength_lp4" value="40 ohm"/>
+                     </struct>
+                     <struct name="odtWriteConfig">
+                        <setting name="phy_driver_strength" value="40 ohm"/>
+                        <setting name="dram_odt" value="40 ohm"/>
+                     </struct>
+                  </struct>
+                  <struct name="boardBusConfig">
+                     <array name="boardBusConfigTables">
+                        <struct name="0">
+                           <setting name="dram_data_bus_ui" value="32bits_0"/>
+                        </struct>
+                        <struct name="1">
+                           <setting name="dram_data_bus_ui" value="32bits_1"/>
+                        </struct>
+                        <struct name="2">
+                           <setting name="dram_data_bus_ui" value="32bits_2"/>
+                        </struct>
+                        <struct name="3">
+                           <setting name="dram_data_bus_ui" value="32bits_3"/>
+                        </struct>
+                        <struct name="4">
+                           <setting name="dram_data_bus_ui" value="32bits_4"/>
+                        </struct>
+                        <struct name="5">
+                           <setting name="dram_data_bus_ui" value="32bits_5"/>
+                        </struct>
+                        <struct name="6">
+                           <setting name="dram_data_bus_ui" value="32bits_6"/>
+                        </struct>
+                        <struct name="7">
+                           <setting name="dram_data_bus_ui" value="32bits_7"/>
+                        </struct>
+                        <struct name="8">
+                           <setting name="dram_data_bus_ui" value="32bits_8"/>
+                        </struct>
+                        <struct name="9">
+                           <setting name="dram_data_bus_ui" value="32bits_9"/>
+                        </struct>
+                        <struct name="10">
+                           <setting name="dram_data_bus_ui" value="32bits_11"/>
+                        </struct>
+                        <struct name="11">
+                           <setting name="dram_data_bus_ui" value="32bits_12"/>
+                        </struct>
+                        <struct name="12">
+                           <setting name="dram_data_bus_ui" value="32bits_13"/>
+                        </struct>
+                        <struct name="13">
+                           <setting name="dram_data_bus_ui" value="32bits_10"/>
+                        </struct>
+                        <struct name="14">
+                           <setting name="dram_data_bus_ui" value="32bits_15"/>
+                        </struct>
+                        <struct name="15">
+                           <setting name="dram_data_bus_ui" value="32bits_14"/>
+                        </struct>
+                     </array>
+                  </struct>
+                  <struct name="phyParams">
+                     <struct name="userInputBasic">
+                        <setting name="DramType" value="LPDDR4"/>
+                        <setting name="DimmType" value="No DIMM"/>
+                        <setting name="HardMacroVer" value="HardmacroFamilyD"/>
+                        <setting name="Lp4xMode" value="no"/>
+                        <setting name="NumDbyte" value="4"/>
+                        <setting name="NumActiveDbyteDfi0" value="2"/>
+                        <setting name="NumActiveDbyteDfi1" value="2"/>
+                        <setting name="NumAnib" value="10"/>
+                        <setting name="NumRank_dfi0" value="1"/>
+                        <setting name="NumRank_dfi1" value="1"/>
+                        <setting name="NumPStates" value="pstates_0"/>
+                        <setting name="Frequency[0]" value="1500"/>
+                        <setting name="Frequency[1]" value="1500"/>
+                        <setting name="Frequency[2]" value="1500"/>
+                        <setting name="Frequency[3]" value="1500"/>
+                        <setting name="PllBypass[0]" value="no"/>
+                        <setting name="PllBypass[1]" value="no"/>
+                        <setting name="PllBypass[2]" value="no"/>
+                        <setting name="PllBypass[3]" value="no"/>
+                        <setting name="DfiFreqRatio[0]" value="1:2"/>
+                        <setting name="Dfi1Exists" value="1"/>
+                        <setting name="DramDataWidth" value="32"/>
+                        <setting name="Train2D" value="yes"/>
+                     </struct>
+                     <struct name="userInputAdvanced">
+                        <setting name="DramByteSwap" value="0"/>
+                        <setting name="ExtCalResVal" value="240 ohm"/>
+                        <setting name="TxSlewRiseDQ[0]" value="0xF"/>
+                        <setting name="TxSlewFallDQ[0]" value="0xF"/>
+                        <setting name="TxSlewRiseAC" value="0xF"/>
+                        <setting name="TxSlewFallAC" value="0xF"/>
+                        <setting name="ODTImpedance[0]" value="40 ohm"/>
+                        <setting name="ODTImpedance[1]" value="40 ohm"/>
+                        <setting name="ODTImpedance[2]" value="40 ohm"/>
+                        <setting name="TxImpedance[0]" value="40 ohm"/>
+                        <setting name="TxImpedance[1]" value="40 ohm"/>
+                        <setting name="TxImpedance[2]" value="40 ohm"/>
+                        <setting name="ATxImpedance" value="40 ohm"/>
+                        <setting name="MemAlertEn" value="no"/>
+                        <setting name="MemAlertPUImp" value="5"/>
+                        <setting name="MemAlertVrefLevel" value="0x29"/>
+                        <setting name="MemAlertSyncBypass" value="0"/>
+                        <setting name="CalInterval" value="9"/>
+                        <setting name="CalOnce" value="no"/>
+                        <setting name="DisDynAdrTri[0]" value="yes"/>
+                        <setting name="Is2Ttiming[0]" value="no"/>
+                        <setting name="WDQSExt" value="0"/>
+                        <setting name="D4RxPreambleLength[0]" value="0"/>
+                        <setting name="D4TxPreambleLength[0]" value="0"/>
+                        <setting name="RxEnBackOff" value="0"/>
+                        <setting name="PhyMstrTrainInterval[0]" value="0x000a"/>
+                        <setting name="PhyMstrMaxReqToAck[0]" value="0x0005"/>
+                        <setting name="Lp4RxPreambleMode[0]" value="0"/>
+                        <setting name="Lp4RxPreambleMode[1]" value="0"/>
+                        <setting name="Lp4RxPreambleMode[2]" value="0"/>
+                        <setting name="Lp4PostambleExt[0]" value="0"/>
+                        <setting name="Lp4PostambleExt[1]" value="0"/>
+                        <setting name="Lp4PostambleExt[2]" value="0"/>
+                        <setting name="Lp4DbiRd[0]" value="0x0000"/>
+                        <setting name="Lp4DbiWr[0]" value="0x0000"/>
+                        <setting name="Lp4WLS[0]" value="0x0000"/>
+                        <setting name="Lp4RL[0]" value="0x0005"/>
+                        <setting name="Lp4WL[0]" value="0x0005"/>
+                        <setting name="EnableDfiCsPolarityFix" value="no"/>
+                     </struct>
+                     <struct name="messageBlock[0]">
+                        <setting name="MsgMisc" value="0"/>
+                        <setting name="Reserved00" value="0"/>
+                        <setting name="HdtCtrl" value="firmwareComplete"/>
+                        <setting name="DisabledDbyte" value="0"/>
+                        <setting name="EnabledDQs" value="0"/>
+                        <setting name="CsPresent" value="0"/>
+                        <setting name="CsPresentD0" value="0"/>
+                        <setting name="PhyVref" value="0x11"/>
+                        <setting name="CATerminatingRankChA" value="0x00"/>
+                        <setting name="CATerminatingRankChB" value="0x00"/>
+                        <setting name="DFIMRLMargin" value="0x2"/>
+                        <setting name="Share2DVrefResult" value="yes"/>
+                        <setting name="UseBroadcastMR" value="0"/>
+                        <setting name="AddrMirror" value="0x2"/>
+                        <setting name="SequenceCtrl" value="0x131F"/>
+                        <setting name="PhyOdtImpedance" value="40 ohm"/>
+                        <setting name="PhyDrvImpedance" value="40 ohm"/>
+                        <setting name="PhyConfigOverride" value="0"/>
+                        <setting name="Lp4Quickboot" value="no"/>
+                        <setting name="CATrainOpt" value="no"/>
+                        <setting name="X8Mode" value="0"/>
+                        <setting name="AcsmOdtCtrl0" value="0"/>
+                        <setting name="AcsmOdtCtrl1" value="0"/>
+                        <setting name="AcsmOdtCtrl2" value="0"/>
+                        <setting name="AcsmOdtCtrl3" value="0"/>
+                        <setting name="D4Misc" value="0"/>
+                        <setting name="RTT_NOM_WR_PARK0" value="0"/>
+                        <setting name="RTT_NOM_WR_PARK1" value="0"/>
+                        <setting name="RTT_NOM_WR_PARK2" value="0"/>
+                        <setting name="RTT_NOM_WR_PARK3" value="0"/>
+                        <setting name="RTT_NOM_WR_PARK4" value="0"/>
+                        <setting name="RTT_NOM_WR_PARK5" value="0"/>
+                        <setting name="RTT_NOM_WR_PARK6" value="0"/>
+                        <setting name="RTT_NOM_WR_PARK7" value="0"/>
+                        <setting name="Lp4Misc" value="0x0"/>
+                        <setting name="MR0" value="0"/>
+                        <setting name="MR1" value="0"/>
+                        <setting name="MR2" value="0"/>
+                        <setting name="MR3" value="0"/>
+                        <setting name="MR4" value="0"/>
+                        <setting name="MR5" value="0"/>
+                        <setting name="MR6" value="0"/>
+                        <setting name="MR1_A0" value="0xd4"/>
+                        <setting name="MR2_A0" value="0x2d"/>
+                        <setting name="MR3_A0" value="0x31"/>
+                        <setting name="MR4_A0" value="0x00"/>
+                        <setting name="MR11_A0" value="0x66"/>
+                        <setting name="MR12_A0" value="0x4d"/>
+                        <setting name="MR13_A0" value="0x00"/>
+                        <setting name="MR14_A0" value="0x4d"/>
+                        <setting name="MR16_A0" value="0x00"/>
+                        <setting name="MR17_A0" value="0x00"/>
+                        <setting name="MR22_A0" value="0x16"/>
+                        <setting name="MR24_A0" value="0x00"/>
+                     </struct>
+                     <struct name="messageBlock[1]">
+                        <setting name="SequenceCtrl" value="0x131F"/>
+                        <setting name="MR0" value="0"/>
+                        <setting name="MR1" value="0"/>
+                        <setting name="MR2" value="0"/>
+                        <setting name="MR3" value="0"/>
+                        <setting name="MR4" value="0"/>
+                        <setting name="MR5" value="0"/>
+                        <setting name="MR6" value="0"/>
+                        <setting name="MR1_A0" value="0xd4"/>
+                        <setting name="MR2_A0" value="0x2d"/>
+                        <setting name="MR3_A0" value="0x31"/>
+                        <setting name="MR4_A0" value="0x00"/>
+                        <setting name="MR11_A0" value="0x66"/>
+                        <setting name="MR12_A0" value="0x4d"/>
+                        <setting name="MR13_A0" value="0x00"/>
+                        <setting name="MR14_A0" value="0x4d"/>
+                        <setting name="MR16_A0" value="0x00"/>
+                        <setting name="MR17_A0" value="0x00"/>
+                        <setting name="MR22_A0" value="0x16"/>
+                        <setting name="MR24_A0" value="0x00"/>
+                     </struct>
+                     <struct name="messageBlock[2]">
+                        <setting name="SequenceCtrl" value="0x131F"/>
+                        <setting name="MR0" value="0"/>
+                        <setting name="MR1" value="0"/>
+                        <setting name="MR2" value="0"/>
+                        <setting name="MR3" value="0"/>
+                        <setting name="MR4" value="0"/>
+                        <setting name="MR5" value="0"/>
+                        <setting name="MR6" value="0"/>
+                        <setting name="MR1_A0" value="0xd4"/>
+                        <setting name="MR2_A0" value="0x2d"/>
+                        <setting name="MR3_A0" value="0x31"/>
+                        <setting name="MR4_A0" value="0x00"/>
+                        <setting name="MR11_A0" value="0x66"/>
+                        <setting name="MR12_A0" value="0x4d"/>
+                        <setting name="MR13_A0" value="0x00"/>
+                        <setting name="MR14_A0" value="0x4d"/>
+                        <setting name="MR16_A0" value="0x00"/>
+                        <setting name="MR17_A0" value="0x00"/>
+                        <setting name="MR22_A0" value="0x16"/>
+                        <setting name="MR24_A0" value="0x00"/>
+                     </struct>
+                     <struct name="messageBlock[3]">
+                        <setting name="SequenceCtrl" value="0x131F"/>
+                        <setting name="MR0" value="0"/>
+                        <setting name="MR1" value="0"/>
+                        <setting name="MR2" value="0"/>
+                        <setting name="MR3" value="0"/>
+                        <setting name="MR4" value="0"/>
+                        <setting name="MR5" value="0"/>
+                        <setting name="MR6" value="0"/>
+                        <setting name="MR1_A0" value="0xd4"/>
+                        <setting name="MR2_A0" value="0x2d"/>
+                        <setting name="MR3_A0" value="0x31"/>
+                        <setting name="MR4_A0" value="0x00"/>
+                        <setting name="MR11_A0" value="0x66"/>
+                        <setting name="MR12_A0" value="0x4d"/>
+                        <setting name="MR13_A0" value="0x00"/>
+                        <setting name="MR14_A0" value="0x4d"/>
+                        <setting name="MR16_A0" value="0x00"/>
+                        <setting name="MR17_A0" value="0x00"/>
+                        <setting name="MR22_A0" value="0x16"/>
+                        <setting name="MR24_A0" value="0x00"/>
+                     </struct>
+                     <struct name="messageBlock2D">
+                        <setting name="CATrainOpt" value="yes"/>
+                        <setting name="RX2D_TrainOpt" value="0"/>
+                        <setting name="TX2D_TrainOpt" value="0"/>
+                        <setting name="Delay_Weight2D" value="0x7F"/>
+                        <setting name="Voltage_Weight2D" value="0"/>
+                        <setting name="SequenceCtrl" value="0x0061"/>
+                        <setting name="Share2DVrefResult" value="yes"/>
+                     </struct>
+                  </struct>
+               </config_set>
+            </component>
+         </components>
+      </ddr>
+      <periphs name="Peripherals" version="8.0" enabled="false" update_project_code="true">
+         <peripherals_profile>
+            <processor_version>N/A</processor_version>
+         </peripherals_profile>
+         <functional_groups/>
+         <components/>
+      </periphs>
+      <pbl name="PBL" version="1.0" enabled="false" update_project_code="true">
+         <generated_project_files/>
+         <pbl_configuration class="java.util.ArrayList"/>
+      </pbl>
+      <serdes name="SERDES" version="1.0" enabled="false" update_project_code="true">
+         <generated_project_files/>
+         <components/>
+      </serdes>
+   </tools>
+</configuration>
